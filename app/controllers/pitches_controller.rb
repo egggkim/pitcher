@@ -23,11 +23,6 @@ class PitchesController < ApplicationController
 
   def edit
     @pitch = Pitch.find(params[:id])
-    if @pitch.update_attributes(pitch_params)
-      redirect_to pitch_path(@pitch)
-    else
-      render 'edit'
-    end
   end
 
   def update
@@ -50,6 +45,6 @@ class PitchesController < ApplicationController
 
   private
   def pitch_params
-    params.require(:pitch).permit(:title, :description)
+    params.require(:pitch).permit(:title, :description, :image)
   end
 end

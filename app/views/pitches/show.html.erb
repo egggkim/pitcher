@@ -1,6 +1,8 @@
 <h1><%= @pitch.title %></h1>
 <h5>Posted on <%= @pitch.date_published %></h5>
 
+<%= image_tag @pitch.image.url(:large) if @pitch.image.url(:large).present? %>
+
 <p><%= @pitch.description %></p>
 
 <nav>
@@ -34,3 +36,5 @@
       </div>
       <%= f.submit "Add your comment!" %>
 <% end %>
+
+<%= link_to "Back to pitches", pitches_path %>

@@ -3,6 +3,7 @@ class Pitch
   include Mongoid::Timestamps
   field :title, type: String
   field :description, type: String
+  mount_uploader :image, PitchUploader
 
   belongs_to :user
   embeds_many :comments

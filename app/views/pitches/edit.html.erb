@@ -1,3 +1,21 @@
 <h1>Edit <%= @pitch.title %></h1>
 
-<%= render "pitches/form", object: @pitch %>
+<%= form_for @pitch, :html => {:multipart => true} do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.file_field :image %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
