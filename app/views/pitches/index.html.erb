@@ -1,14 +1,19 @@
-<h1>All pitches</h1>
-<p><%= link_to "Add new pitch", new_pitch_path %></p>
-<p><%= link_to "My profile", current_user %></p>
+<% if logged_in? %>
+  <h1>All pitches</h1>
+    <p>Logged in as: <%= current_user.name %></p>
+    <span><%= link_to "View my profile", current_user %></span> <%= link_to 'Log Out', logout_path, method: :delete %>
+    <br>
 
-<ul>
-  <% @pitches.each do |p| %>
-    <li>
-      <%= p.title %>
-      <br>
-      <%= image_tag p.image.url(:small) if p.image.url(:small).present? %>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @pitches.each do |p| %>
+      <li>
+        <%= link_to p.title, p %>
+        <br>
+        <%= image_tag p.image.url(:small) if p.image.url(:small).present? %>
+      </li>
+    <% end %>
+  </ul>
 
+  <% else %>
+    <%= render 'users/form' %>
+<% end %>

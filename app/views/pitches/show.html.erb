@@ -1,5 +1,5 @@
 <h1><%= @pitch.title %></h1>
-<h5>Posted on <%= @pitch.date_published %></h5>
+<h5>Posted on <%= @pitch.date_published %> by <%= @pitch.user.name %></h5>
 
 <%= image_tag @pitch.image.url(:large) if @pitch.image.url(:large).present? %>
 

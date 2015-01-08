@@ -2,12 +2,4 @@
 
 <p>Some text about what this app does. Yes!</p>
 
-<div class="signup">
-  <h3>Not a user yet? What are you waiting for?</h3>
-  <%= link_to "Sign up", new_user_path  %>
-</div>
-
-<div class="login">
-  <h3>Already a member?</h3>
-  <%= link_to "Log in", login_path  %>
-</div>
+<%= render 'form' %>

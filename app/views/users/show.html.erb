@@ -1,9 +1,29 @@
-<h1><%= @user.name %></h1>
+<h1>More about <%= @user.name %></h1>
 
 <p>There will be an avatar image here.</p>
 <p>There will be an about me description here.</p>
 
 <nav>
   <%= link_to "Edit my Profile", edit_user_path(@user) %>
-  <%= link_to "Delete", user_path(@user), method: :delete, data: {confirm: "Are you sure you want to delete #{@user.name}?"} %>
+  <br>
+  <!-- remove Delete user functionality later -->
+  <%= link_to "Delete user", user_path(@user), method: :delete, data: {confirm: "Are you sure you want to delete #{@user.name}?"} %>
 </nav>
+
+<div>
+  <h4>My Pitches</h4>
+
+    <div>
+      <%= link_to "Add a new pitch", new_pitch_path %>
+    </div>
+    
+  <ul>
+    <% @user.pitches.each do |p| %>
+      <li>
+        <%= p.title %>
+        <br>
+        <%= image_tag p.image.url(:small) if p.image.url(:small).present? %>
+      </li>
+    <% end %>
+  </ul>
+</div>

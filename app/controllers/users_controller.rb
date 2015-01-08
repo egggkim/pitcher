@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    @pitches = Pitch.all
     @user = User.new(user_params)
     if @user.save
       redirect_to user_path(@user)
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @pitches = Pitch.all
     @user = User.find(params[:id])
   end
 

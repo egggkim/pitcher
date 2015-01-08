@@ -4,6 +4,7 @@ class PitchesController < ApplicationController
   end
 
   def new
+    @users = User.all
     @pitch = Pitch.new
   end
 
@@ -22,6 +23,7 @@ class PitchesController < ApplicationController
   end
 
   def edit
+    @users = User.all
     @pitch = Pitch.find(params[:id])
   end
 
@@ -45,6 +47,6 @@ class PitchesController < ApplicationController
 
   private
   def pitch_params
-    params.require(:pitch).permit(:title, :description, :image)
+    params.require(:pitch).permit(:title, :description, :image, :user)
   end
 end
