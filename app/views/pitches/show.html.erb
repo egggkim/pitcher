@@ -1,0 +1,36 @@
+<h1><%= @pitch.title %></h1>
+<h5>Posted on <%= @pitch.date_published %></h5>
+
+<p><%= @pitch.description %></p>
+
+<nav>
+  <%= link_to "Edit", edit_pitch_path(@pitch) %>
+  <%= link_to "Delete", pitch_path(@pitch), method: :delete, data: {confirm: "Are you sure you want to delete #{@pitch.title}?"} %>
+</nav>
+
+<h3>Comments</h3>
+<ul>
+  <% @pitch.comments.each do |comment| %>        
+    <li>
+      <%= comment.body %> -- <%= comment.commenter.try(:name) %> added: <%= comment.date_added %>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_for [@pitch, @comment] do |f| %>
+  <%= f.fields_for :commenter_attributes do |commenter_fields| %>
+      <div>
+        <%= commenter_fields.label :name %>
+        <%= commenter_fields.text_field :name %>
+      </div>
+      <div>
+          <%= commenter_fields.label :email %>
+          <%= commenter_fields.text_field :email %>
+      </div>
+  <% end %>
+      <div>
+        <%= f.label :body, "New comment:" %>
+        <%= f.text_area :body %>
+      </div>
+      <%= f.submit "Add your comment!" %>
+<% end %>

@@ -1,0 +1,11 @@
+<h1>All pitches</h1>
+<p><%= link_to "Add new pitch", new_pitch_path %></p>
+<ul>
+  <% @pitches.each do |p| %>
+    <li>
+      <%= p.title %>
+      <br>
+    </li>
+  <% end %>
+</ul>
+
