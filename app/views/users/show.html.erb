@@ -1,6 +1,9 @@
 <h1><%= @user.name %></h1>
 
+<p>There will be an avatar image here.</p>
+<p>There will be an about me description here.</p>
+
 <nav>
-  <%= link_to "Edit", edit_user_path(@user) %>
+  <%= link_to "Edit my Profile", edit_user_path(@user) %>
   <%= link_to "Delete", user_path(@user), method: :delete, data: {confirm: "Are you sure you want to delete #{@user.name}?"} %>
 </nav>

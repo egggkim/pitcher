@@ -1,5 +1,9 @@
 <h1>Log In</h1>
 
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
 <%= form_for :login do |f| %>
   <div>
     <%= f.label :email %>
