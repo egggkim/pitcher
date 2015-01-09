@@ -11,4 +11,6 @@ class Pitch
   def date_published
     created_at.localtime.strftime("%A, %B %-d, %Y at %l:%M %p")
   end
+
+  validates_presence_of :title, :description
 end

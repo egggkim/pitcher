@@ -1,3 +1,9 @@
 <h1>New Pitch</h1>
 
+<ul>
+  <% @pitch.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+
 <%= render "pitches/form", object: @pitch %>
