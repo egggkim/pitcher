@@ -10,6 +10,7 @@ class PitchesController < ApplicationController
 
   def create
     @pitch = Pitch.new(pitch_params)
+    @pitch.user = current_user
     if @pitch.save
       redirect_to pitch_path(@pitch)
     else

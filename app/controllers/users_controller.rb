@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @pitches = Pitch.all
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id.to_s
       redirect_to user_path(@user)
     else
       render 'new'
@@ -27,9 +28,10 @@ class UsersController < ApplicationController
   end
 
   def update
+    @pitches = Pitch.all
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to users_path(@user)
+      redirect_to user_path(@user)
     else
       render 'edit'
     end
@@ -46,6 +48,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:first_name, :middle_name, :last_name, :email, :password, :password_confirmation, :company, :about, :image)
   end
 end

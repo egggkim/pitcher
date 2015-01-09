@@ -1,9 +1,5 @@
 <% if logged_in? %>
   <h1>All pitches</h1>
-    <p>Logged in as: <%= current_user.name %></p>
-    <span><%= link_to "View my profile", current_user %></span> <%= link_to 'Log Out', logout_path, method: :delete %>
-    <br>
-
   <ul>
     <% @pitches.each do |p| %>
       <li>

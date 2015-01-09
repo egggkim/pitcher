@@ -6,7 +6,8 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'mini_magick' # for post-upload image processing
 gem 'bcrypt', '~> 3.1.9'
 gem 'bootstrap-sass', '~> 3.3.1.0'
-
+gem 'figaro'
+gem 'fog'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use SCSS for stylesheets

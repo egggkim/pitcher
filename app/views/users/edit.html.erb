@@ -2,13 +2,38 @@
 
 <%= form_for @user do |f| %>
   <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= f.label :middle_name %>
+    <%= f.text_field :middle_name %>
+  </div>
+
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
   </div>
 
   <div>
     <%= f.label :email %>
     <%= f.text_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :company %>
+    <%= f.text_field :company %>
+  </div>
+
+  <div>
+    <%= f.label :about_me %>
+    <%= f.text_area :about %>
+  </div>
+
+  <div>
+    <%= f.label :profile_photo %>
+    <%= f.file_field :image %>
   </div>
 
   <div>
