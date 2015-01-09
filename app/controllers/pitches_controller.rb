@@ -4,7 +4,6 @@ class PitchesController < ApplicationController
   end
 
   def new
-    @users = User.all
     @pitch = Pitch.new
   end
 
@@ -24,7 +23,6 @@ class PitchesController < ApplicationController
   end
 
   def edit
-    @users = User.all
     @pitch = Pitch.find(params[:id])
   end
 

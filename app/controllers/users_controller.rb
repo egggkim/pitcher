@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    @pitches = Pitch.all
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id.to_s
@@ -23,12 +22,10 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @pitches = Pitch.all
     @user = User.find(params[:id])
   end
 
   def update
-    @pitches = Pitch.all
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       redirect_to user_path(@user)
