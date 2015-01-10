@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.3'
 gem 'mongoid', '~> 4.0.0'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
@@ -9,6 +10,7 @@ gem 'bootstrap-sass', '~> 3.3.1.0'
 gem 'figaro'
 gem 'fog'
 gem 'rails_12factor', group: :production
+gem 'thin', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use SCSS for stylesheets
