@@ -1,0 +1,19 @@
+<div id='welcome-links'>
+  <div class='row users'>
+
+    <div class='login'>
+      <p>Already a member?</p>
+      <%= link_to login_path do %>
+        <%= image_tag 'welcome/login.png', height: 35 %> 
+      <% end  %>
+    </div>
+
+    <div class='signup'>
+      <p>Not a user yet?</p>
+      <%= link_to new_user_path do %>
+        <%= image_tag 'welcome/signup.png', height: 35 %> 
+      <% end  %>
+    </div>
+
+  </div>
+</div>
