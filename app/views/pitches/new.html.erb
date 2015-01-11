@@ -1,9 +1,13 @@
-<h1>New Pitch</h1>
+<% if logged_in? %>
 
-<ul>
-  <% @pitch.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-</ul>
+  <h1>New Pitch</h1>
 
-<%= render "pitches/form", object: @pitch %>
+  <ul>
+    <% @pitch.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+
+  <%= render "pitches/form", object: @pitch %>
+
+<% end %>

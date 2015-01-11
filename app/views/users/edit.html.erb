@@ -1,45 +1,40 @@
-<h1>Edit your profile</h1>
+<% if logged_in? %>
+  <h1>Edit your profile</h1>
 
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
+  <%= bootstrap_form_for @user do |f| %>
+    <div>
+      <%= f.text_field :first_name, label: "First Name:" %>
+    </div>
 
-  <div>
-    <%= f.label :middle_name %>
-    <%= f.text_field :middle_name %>
-  </div>
+    <div>
+      <%= f.text_field :middle_name, label: "Middle Name:" %>
+    </div>
 
-  <div>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
+    <div>
+      <%= f.text_field :last_name, label: "Last Name:" %>
+    </div>
 
-  <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
+    <div>
+      <%= f.email_field :email %>
+    </div>
 
-  <div>
-    <%= f.label :company %>
-    <%= f.text_field :company %>
-  </div>
+    <div>
+      <%= f.text_field :company, label: "Company:" %>
+    </div>
 
-  <div>
-    <%= f.label :about_me %>
-    <%= f.text_area :about %>
-  </div>
+    <div>
+      <%= f.text_area :about, label: "About Me:" %>
+    </div>
 
-  <div>
-    <%= f.label :profile_photo %>
-    <%= f.file_field :image %>
-  </div>
+    <div>
+      <%= f.file_field :image, label: "Profile Photo: " %>
+    </div>
 
-  <div>
-    <%= f.submit "Update me!" %>
-  </div>
+    <div>
+      <%= f.submit "Update me!" %>
+    </div>
+  <% end %>
+
+  <br>
+  <%= link_to "Cancel", pitches_path %>
 <% end %>
-
-<br>
-<%= link_to "Cancel", pitches_path %>

@@ -1,5 +1,13 @@
-<h1>Welcome to Pitchr</h1>
+<% if logged_in? %>
+  <%= link_to "View all pitches here!", pitches_path %>
 
-<p>Some text about what this app does. Yes!</p>
+<% else %>
+  <div class='container-fluid' id='welcome'>
+    <div class='text-center'>
+      <h1 id='welcome'>Welcome to</h1>
+      <%= image_tag 'logos/pitchr-welcome.png', width: '200px', class: 'img-responsive center-block' %>
+      <p id='tagline'>Discover your next big hit</p>
+    </div>
+  </div>
 
-<%= render 'form' %>
+<% end %>

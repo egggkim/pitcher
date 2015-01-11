@@ -1,22 +1,24 @@
-<h1>Edit <%= @pitch.title %></h1>
+<% if logged_in? %>
 
-<%= form_for @pitch, :html => {:multipart => true} do |f| %>
+  <h1>Edit <%= @pitch.title %></h1>
 
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+  <%= bootstrap_form_for @pitch, :html => {:multipart => true} do |f| %>
 
-  <div>
-    <%= f.file_field :image %>
-  </div>
+    <div>
+      <%= f.text_field :title, label: "Title:" %>
+    </div>
+    
+    <div>
+      <%= f.text_area :description, label: "Description: " %>
+    </div>
 
-  <div>
-    <%= f.submit %>
-  </div>
+    <div>
+      <%= f.file_field :image, label: "Update your thumbnail:" %>
+    </div>
+
+    <div>
+      <%= f.submit %>
+    </div>
+  <% end %>
+
 <% end %>

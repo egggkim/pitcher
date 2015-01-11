@@ -1,21 +1,21 @@
-<%= form_for @pitch, :html => {:multipart => true} do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+<% if logged_in? %>
+  <%= bootstrap_form_for @pitch, :html => {:multipart => true} do |f| %>
+    <div>
+      <%= f.text_field :title, label: "Title:" %>
+    </div>
+    
+    <div>
+      <%= f.text_area :description, label: "Description:" %>
+    </div>
 
-  <div>
-    <%= f.file_field :image %>
-  </div>
+    <div>
+      <%= f.file_field :image, label: "Upload a thumbnail:" %>
+    </div>
 
-  <div>
-    <%= f.submit %>
-  </div>
+    <div>
+      <%= f.submit "Submit This Pitch" %>
+    </div>
+  <% end %>
+
+  <%= link_to "Cancel", pitches_path %>
 <% end %>
-
-<%= link_to "Cancel", pitches_path %>

@@ -1,48 +1,35 @@
-<h1>Sign Up</h1>
+<%= image_tag 'welcome/signup.png', height: 50 %>
 
-<ul>
-  <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-</ul>
-
-<%= form_for @user do |f| %>
+<%= bootstrap_form_for @user do |f| %>
   <div>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, label: "First Name:" %>
   </div>
 
   <div>
-    <%= f.label :middle_name %>
-    <%= f.text_field :middle_name %>
+    <%= f.text_field :middle_name, label: "Middle Name (optional):" %>
   </div>
 
   <div>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, label: "Last Name:" %>
   </div>
   
   <div>
-    <%= f.label :company %>
-    <%= f.text_field :company %>
+    <%= f.text_field :company, label: "Company (optional):" %>
   </div>
   
   <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.email_field :email %>
   </div>
   
   <div>
-    <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
 
   <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation, label: "Password Confirmation:" %>
   </div>
   
   <div>
-    <%= f.submit "Sign me up!" %>
+    <%= f.submit "Sign me up!", class: 'btn btn-primary' %>
   </div>
 <% end %>

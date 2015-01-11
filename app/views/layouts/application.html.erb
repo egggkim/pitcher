@@ -7,22 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container-fluid">
+    <% if logged_in? %>
+      <nav>
+        <span><%= link_to "View my profile", current_user %></span> 
 
-<% if logged_in? %>
-    <span><%= link_to "View my profile", current_user %></span> 
-    <span><%= link_to "Edit my profile", edit_user_path(current_user) %></span> 
-    <span><%= link_to 'Log Out', logout_path, method: :delete %></span>  
-    <!-- remove Delete user functionality later -->    
-    <span><%= link_to "Delete user", user_path(current_user), method: :delete, data: {confirm: "Are you sure you want to delete #{current_user.first_name}?"} %></span>
+        <span><%= link_to "Edit my profile", edit_user_path(current_user) %></span>
 
-    <p>Logged in as: <%= current_user.first_name %></p>
-    <br>
+        <span><%= link_to "View all pitches", pitches_path %></span> 
+        <span><%= link_to 'Log Out', logout_path, method: :delete %></span>  
+        <!-- remove Delete user functionality later -->    
+        <span><%= link_to "Delete user", user_path(current_user), method: :delete, data: {confirm: "Are you sure you want to delete #{current_user.first_name}?"} %></span>
+      </nav>
 
-  <% else %>
-    <%= render 'users/form' %>
-<% end %>
+       <p>Logged in as: <%= current_user.first_name %></p>
+    <% end %>
 
-<%= yield %>
+    <%= yield %>
 
+    <% if !logged_in? %>
+      <%= render 'users/links' %>
+    <% end %>
+</div>
 </body>
 </html>

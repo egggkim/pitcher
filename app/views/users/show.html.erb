@@ -1,25 +1,26 @@
-<h1>More about <%= @user.first_name %></h1>
+<% if logged_in? %>
+  <h1>More about <%= @user.first_name %></h1>
 
-<%= image_tag @user.image.url(:thumb) if @user.image.url.present? %>
-<br> 
-<%= @user.about %>
+  <%= image_tag @user.image.url(:thumb) if @user.image.url.present? %>
+  <br> 
+  <%= @user.about %>
 
-<div>
-  <h4>My Pitches</h4>
+  <div>
+    <h4>My Pitches</h4>
 
-    <div>
-      <%= link_to "Add a new pitch", new_pitch_path %>
-    </div>
-    
-  <ul>
-    <% @user.pitches.each do |p| %>
-      <li>
-        <%= link_to p.title, p %>
-        <br>
-        <%= image_tag p.image.url(:small) if p.image.url(:small).present? %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+      <div>
+        <%= link_to "Add a new pitch", new_pitch_path %>
+      </div>
+      
+    <ul>
+      <% @user.pitches.each do |p| %>
+        <li>
+          <%= link_to p.title, p %>
+          <br>
+          <%= image_tag p.image.url(:small) if p.image.url(:small).present? %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
-
+<% end %>

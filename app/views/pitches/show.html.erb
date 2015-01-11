@@ -19,20 +19,17 @@
   <% end %>
 </ul>
 
-<%= form_for [@pitch, @comment] do |f| %>
+<%= bootstrap_form_for [@pitch, @comment] do |f| %>
   <%= f.fields_for :commenter_attributes do |commenter_fields| %>
       <div>
-        <%= commenter_fields.label :name %>
-        <%= commenter_fields.text_field :name %>
+        <%= commenter_fields.text_field :name, label: "Name:" %>
       </div>
       <div>
-          <%= commenter_fields.label :email %>
-          <%= commenter_fields.text_field :email %>
+          <%= commenter_fields.email_field :email %>
       </div>
   <% end %>
       <div>
-        <%= f.label :body, "New comment:" %>
-        <%= f.text_area :body %>
+        <%= f.text_area :body, label: "New Comment:" %>
       </div>
       <%= f.submit "Add your comment!" %>
 <% end %>

@@ -1,19 +1,19 @@
-<h1>Log In</h1>
-
-<% if flash[:notice] %>
-  <%= flash[:notice] %>
-<% end %>
-
-<%= form_for :login do |f| %>
-  <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div>
-    <%= f.submit 'Log In' %>
-  </div>
-<% end %>
+<div class="form-group">
+<%= image_tag 'welcome/login.png', height: 50 %>
+<div class="flash">
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>
+  <% end %>
+</div>
+  <%= bootstrap_form_for :login do |f| %>
+    <div>
+      <%= f.email_field :email %>
+    </div>
+    <div>
+      <%= f.password_field :password %>
+    </div>
+    <div>
+      <%= f.submit 'Log In' %>
+    </div>
+  <% end %>
+</div>

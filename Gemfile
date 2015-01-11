@@ -7,6 +7,7 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'mini_magick' # for post-upload image processing
 gem 'bcrypt', '~> 3.1.9'
 gem 'bootstrap-sass', '~> 3.3.1.0'
+gem 'bootstrap_form'
 gem 'figaro'
 gem 'fog'
 gem 'rails_12factor', group: :production
