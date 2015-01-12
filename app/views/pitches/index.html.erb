@@ -1,13 +1,20 @@
 <% if logged_in? %>
   <h1>All pitches</h1>
+
+<!-- filter all user pitches by keyword -->
+<%= form_tag("/pitches", method: "get") do %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Filter by Title") %>
+<% end %>
+
+<!-- display all user pitches -->
   <ul>
     <% @pitches.each do |p| %>
       <li>
         <%= link_to p.title, p %>
         <br>
-        <%= image_tag p.image.url(:small) if p.image.url(:small).present? %>
+        <%= link_to (image_tag p.image.url(:small)), p %>
       </li>
-      
     <% end %>
   </ul>
 <% end %>

@@ -8,7 +8,7 @@ class User
   field :company, type: String
   field :about, type: String
   attr_reader :password
-  mount_uploader :image, ImageUploader
+  mount_uploader :avatar, AvatarUploader
 
   has_many :pitches
   

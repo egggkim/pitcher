@@ -1,6 +1,10 @@
 class PitchesController < ApplicationController
   def index
-    @pitches = Pitch.all.order("created_at DESC")
+    if params[:q]
+      @pitches = Pitch.where(title:/#{params[:q]}/i)
+    else
+      @pitches = Pitch.all.order("created_at DESC")
+    end
   end
 
   def new

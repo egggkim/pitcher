@@ -18,15 +18,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     if @user.update_attributes(user_params)
       redirect_to user_path(@user)
     else
@@ -35,8 +35,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
+    @user = current_user
     if @user.destroy
+      session.delete(:user_id)
       redirect_to users_path
     else
       redirect_to user_path(@user)
@@ -45,6 +46,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :middle_name, :last_name, :email, :password, :password_confirmation, :company, :about, :image)
+    params.require(:user).permit(:first_name, :middle_name, :last_name, :email, :password, :password_confirmation, :company, :about, :avatar)
   end
 end

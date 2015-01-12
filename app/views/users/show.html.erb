@@ -2,7 +2,7 @@
   <h1>More about <%= @user.first_name %></h1>
 
   <div role='presentation'><%= link_to "Edit my profile", edit_user_path(current_user) %></div>
-  <%= image_tag @user.image.url(:thumb) if @user.image.url.present? %>
+  <%= image_tag @user.avatar.url(:thumb, height: 20)  %>
   <br> 
   <%= @user.about %>
 
@@ -18,7 +18,7 @@
         <li>
           <%= link_to p.title, p %>
           <br>
-          <%= image_tag p.image.url(:small) if p.image.url(:small).present? %>
+          <%= image_tag p.image.url(:small) %>
         </li>
       <% end %>
     </ul>

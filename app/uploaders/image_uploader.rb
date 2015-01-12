@@ -20,9 +20,17 @@ class ImageUploader < CarrierWave::Uploader::Base
   def fix_rotation
     manipulate! do |img|
       img.tap(&:auto_orient)
+    end
   end
 
+  def default_url  
+  #   # For Rails 3.1+ asset pipeline compatibility:
+  #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
+  #
+  #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    'default-pitch.png'
   end
+
   version :small do
     process :resize_to_fit => [350, nil]
   end
@@ -31,9 +39,6 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [650, nil]
   end
 
-  version :thumb do
-    process :resize_to_fill => [130, 130]
-  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
