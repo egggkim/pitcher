@@ -1,3 +1,39 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// welcomes#index
+#welcome {
+  margin-top: 30px;
+  font-family: 'shithead';
+  text-align: center;
+    #tagline {
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+}
+
+//partial for sign up and log in links
+#welcome-links {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'shithead';
+    a {
+      color: #71c9f1;
+      text-transform: uppercase;
+    }     
+    p { margin: 0px; }
+    .login { margin: 30px; }
+    .signup { margin: 30px; }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+    a {
+      margin-right: 20px;
+    }
+}

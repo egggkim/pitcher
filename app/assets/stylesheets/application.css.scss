@@ -38,36 +38,3 @@ li {
   list-style: none;
   margin-bottom: 15px;
 }
-
-// welcomes#index
-#welcome {
-  margin-top: 30px;
-  font-family: 'shithead';
-  text-align: center;
-  #tagline {
-    font-size: 20px;
-    text-transform: uppercase;
-  }
-}
-
-//partial for sign up and log in links
-#welcome-links {
-  text-align: center;
-  text-transform: uppercase;
-  font-family: 'shithead';
-    a {
-      color: #71c9f1;
-      text-transform: uppercase;
-    }     
-    p {
-      margin: 0px;
-    }
-    .login {
-      margin: 30px;
-    }
-    .signup {
-      margin: 30px;
-    }
-}
-
-//sessions#new

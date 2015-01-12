@@ -1,6 +1,7 @@
 <% if logged_in? %>
   <h1>More about <%= @user.first_name %></h1>
 
+  <div role='presentation'><%= link_to "Edit my profile", edit_user_path(current_user) %></div>
   <%= image_tag @user.image.url(:thumb) if @user.image.url.present? %>
   <br> 
   <%= @user.about %>
