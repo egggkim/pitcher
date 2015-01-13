@@ -2,14 +2,14 @@
   <% if current_user %>
     <%= image_tag 'models/editprofileheader.png', height: 60, :class => 'header' %>
 
-    <%= bootstrap_form_for current_user do |f| %>
+    <%= bootstrap_form_for current_user, :html => {:multipart => true} do |f| %>
         <%= f.text_field :first_name, label: "First Name:" %>
         <%= f.text_field :middle_name, label: "Middle Name:" %>
         <%= f.text_field :last_name, label: "Last Name:" %>
         <%= f.email_field :email %>
         <%= f.text_field :company, label: "Company:" %>
         <%= f.text_area :about, label: "About Me:" %>
-        <%= f.file_field :image, label: "Profile Photo: " %>
+        <%= f.file_field :avatar, label: "Profile Photo: " %>
   
         <%= f.submit "Update me" %>
 
