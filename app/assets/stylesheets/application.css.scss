@@ -17,11 +17,24 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+$font: 'Amatic SC', cursive;
+
+html {
+  height: 100%;
+}
+
+main {
+  min-height: 100%;
+  margin-bottom: -100px;
+  background: #ddd;
+
+}
 
 body {
   background-color: #efefef;
   margin-top: 20px;
   bottom: 30px;
+  height: 100%;
 }
 
 .top-logo {
@@ -30,8 +43,8 @@ body {
 }
 
 h1 {
-  font-family: "shithead";
-  font-weight: bold;
+  font-family: $font;
+  letter-spacing: 3px;
   text-transform: uppercase;
 }
 

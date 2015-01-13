@@ -1,9 +1,12 @@
 <% if logged_in? %>
+  <div role='presentation'><%= link_to "Edit my profile", edit_user_path(current_user) %></div>
+
   <h1>More about <%= @user.first_name %></h1>
 
-  <div role='presentation'><%= link_to "Edit my profile", edit_user_path(current_user) %></div>
-  <%= image_tag @user.avatar.url(:thumb, height: 20)  %>
-  <br> 
+  <div>
+    <%= image_tag @user.avatar.url(:thumb) %>
+    This is where avatar should be
+  </div>
   <%= @user.about %>
 
   <div>

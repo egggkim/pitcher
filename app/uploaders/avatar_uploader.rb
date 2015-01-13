@@ -6,7 +6,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
   process :fix_rotation
-  process :resize_default
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
@@ -30,10 +29,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
     'default-user.png' 
-  end
-
-  def resize_default(w,h)
-    process :resize_to_fit => [20,20]
   end
 
   version :thumb do
