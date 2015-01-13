@@ -1,41 +1,19 @@
-<% if current_user %>
-  <h1>Edit your profile</h1>
+<div class='edit'>
+  <% if current_user %>
+    <%= image_tag 'models/editprofileheader.png', height: 60, :class => 'header' %>
 
-  <%= bootstrap_form_for current_user do |f| %>
-    <div>
-      <%= f.text_field :first_name, label: "First Name:" %>
-    </div>
+    <%= bootstrap_form_for current_user do |f| %>
+        <%= f.text_field :first_name, label: "First Name:" %>
+        <%= f.text_field :middle_name, label: "Middle Name:" %>
+        <%= f.text_field :last_name, label: "Last Name:" %>
+        <%= f.email_field :email %>
+        <%= f.text_field :company, label: "Company:" %>
+        <%= f.text_area :about, label: "About Me:" %>
+        <%= f.file_field :image, label: "Profile Photo: " %>
+  
+        <%= f.submit "Update me" %>
 
-    <div>
-      <%= f.text_field :middle_name, label: "Middle Name:" %>
-    </div>
-
-    <div>
-      <%= f.text_field :last_name, label: "Last Name:" %>
-    </div>
-
-    <div>
-      <%= f.email_field :email %>
-    </div>
-
-    <div>
-      <%= f.text_field :company, label: "Company:" %>
-    </div>
-
-    <div>
-      <%= f.text_area :about, label: "About Me:" %>
-    </div>
-
-    <div>
-      <%= f.file_field :image, label: "Profile Photo: " %>
-    </div>
-
-    <div>
-      <%= f.submit "Update me!" %>
-    </div>
+        <%= link_to image_tag('models/cancel.png', height: 20), pitches_path, :id => 'cancel' %> 
+    <% end %>
   <% end %>
-
-  <br>
-  <%= link_to "Cancel", pitches_path %>
-
-<% end %>
+</div>

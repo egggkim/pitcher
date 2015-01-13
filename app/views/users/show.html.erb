@@ -1,32 +1,38 @@
-<% if logged_in? %>
-  <div role='presentation'><%= link_to "Edit my profile", edit_user_path(current_user) %></div>
+<div class='container-fluid'>
+  <% if logged_in? %>
+    <div>
+      <%= link_to image_tag('models/editmyprofile.png', height: 40), edit_user_path(current_user) %>
+    </div>
 
-  <h1>More about <%= @user.first_name %></h1>
-
-  <div>
-    <%= image_tag @user.avatar.url(:thumb) %>
-    This is where avatar should be
-  </div>
-  <%= @user.about %>
-
-  <div>
-    <h4>My Pitches</h4>
+    <div id='about-user'>
+      <h1><%= @user.first_name %> <%= @user.middle_name %> <%= @user.last_name %></h1>
 
       <div>
-        <%= link_to "Add a new pitch", new_pitch_path %>
+        <%= image_tag @user.avatar.url(:thumb) %>
       </div>
-      
-    <ul>
-      <% @user.pitches.each do |p| %>
-        <li>
-          <%= link_to p.title, p %>
-          <br>
-          <%= link_to (image_tag p.image.url(:small)), p %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+      <%= @user.about %>
 
-<% else %>
-  <%= render 'shared/links' %>
-<% end %>
+    </div>
+
+    <div>
+      <h4>My Pitches</h4>
+
+        <div>
+          <%= link_to "Add a new pitch", new_pitch_path %>
+        </div>
+        
+      <ul>
+        <% @user.pitches.each do |p| %>
+          <li>
+            <%= link_to p.title, p %>
+            <br>
+            <%= link_to (image_tag p.image.url(:small)), p %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+  <% else %>
+    <%= render 'shared/links' %>
+  <% end %>
+</div>

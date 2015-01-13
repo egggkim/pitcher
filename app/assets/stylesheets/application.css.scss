@@ -23,7 +23,7 @@ html {
   height: 100%;
 }
 
-main {
+.main {
   min-height: 100%;
   margin-bottom: -100px;
   background: #ddd;
@@ -37,18 +37,21 @@ body {
   height: 100%;
 }
 
-.top-logo {
-  margin-top: 10px;
-  position: absolute;
-}
-
-h1 {
+h1, h2, h3, h4, h5 {
   font-family: $font;
   letter-spacing: 3px;
-  text-transform: uppercase;
 }
 
 li {
   list-style: none;
   margin-bottom: 15px;
+}
+
+form {
+  background-color: white;
+  border: 1px solid #d3d3d3;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 30px;
+  width: 50%;
 }
