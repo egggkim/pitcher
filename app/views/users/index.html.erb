@@ -1,5 +1,5 @@
 <% if logged_in? %>
-  <h1>All users</h1>
+  <%= image_tag('nav/allusers.png', height: 60) %>
   <ul>
     <% @users.each do |u| %>
       <li>

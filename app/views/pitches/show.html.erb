@@ -2,7 +2,7 @@
   <h1><%= @pitch.title %></h1>
   <h5>Posted on <%= @pitch.date_published %> by <%= link_to @pitch.user.first_name, user_path(@pitch.user) %></h5>
 
-  <%= image_tag @pitch.image.url(:large) if @pitch.image.url(:large).present? %>
+  <%= image_tag @pitch.image.url(:large), :class => "img-responsive" if @pitch.image.url(:large).present?%>
 
   <p><%= @pitch.description %></p>
 
@@ -23,21 +23,23 @@
     <% end %>
   </ul>
 
-  <%= bootstrap_form_for [@pitch, @comment] do |f| %>
-    <%= f.fields_for :commenter_attributes do |commenter_fields| %>
-      <div>
-        <%= commenter_fields.text_field :name, label: "Name:" %>
-      </div>
-      <div>
-          <%= commenter_fields.email_field :email %>
-      </div>
+  <div class='form-group'>
+    <%= bootstrap_form_for [@pitch, @comment] do |f| %>
+      <%= f.fields_for :commenter_attributes do |commenter_fields| %>
+        <div>
+          <%= commenter_fields.text_field :name, label: "Name:" %>
+        </div>
+        <div>
+            <%= commenter_fields.email_field :email %>
+        </div>
+      <% end %>
+        <div>
+          <%= f.text_area :body, label: "New Comment:" %>
+        </div>
+        <%= f.submit "Add your comment!" %>
     <% end %>
-      <div>
-        <%= f.text_area :body, label: "New Comment:" %>
-      </div>
-      <%= f.submit "Add your comment!" %>
-  <% end %>
-
+  </div>
+  
   <%= link_to "Back to pitches", pitches_path %>
 
 <% else %>

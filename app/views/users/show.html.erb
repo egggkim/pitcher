@@ -1,7 +1,11 @@
-<div class='container-fluid'>
+<div class='container-fluid transitions-enabled pitches'>
   <% if logged_in? %>
-    <div>
-      <%= link_to image_tag('models/editmyprofile.png', height: 40), edit_user_path(current_user) %>
+    <div id='edit-my-profile'>
+        <%= link_to image_tag('models/editmyprofile.png', height: 40), edit_user_path(current_user) %>
+    </div>
+
+    <div id='add-new-pitch'>
+      <%= link_to image_tag('models/newpitch.png', height: 20), new_pitch_path %>
     </div>
 
     <div id='about-user'>
@@ -10,26 +14,26 @@
       <div>
         <%= image_tag @user.avatar.url(:thumb) %>
       </div>
-      <%= @user.about %>
-
+      <p><%= @user.about %></p>
     </div>
 
-    <div>
-      <h4>My Pitches</h4>
+    <div class='headers'>
+      <%= image_tag('nav/mypitches.png', height: 40) %>
+    </div>
 
-        <div>
-          <%= link_to "Add a new pitch", new_pitch_path %>
-        </div>
-        
-      <ul>
-        <% @user.pitches.each do |p| %>
-          <li>
-            <%= link_to p.title, p %>
-            <br>
-            <%= link_to (image_tag p.image.url(:small)), p %>
-          </li>
-        <% end %>
-      </ul>
+
+    <div class='row'>
+        <ul>
+          <% @user.pitches.each do |p| %>
+            <li class='box panel panel-default'>
+              <br>
+              <%= link_to (image_tag p.image.url(:small)), p %>
+              <div class='panel-body'>
+                <%= link_to p.title, p %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
     </div>
 
   <% else %>

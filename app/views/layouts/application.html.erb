@@ -9,15 +9,12 @@
   <link href='http://fonts.googleapis.com/css?family=Loved+by+the+King' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div class="container-fluid row">
-
   <% if logged_in? %>
     <%= render 'shared/nav' %>
   <% end %>
-
-  <%= yield %>
-  </div> 
-
+  <div class='main'>
+    <%= yield %>
+  </div>
   <%= render 'shared/footer' %>
 </body>
 </html>

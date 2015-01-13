@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//view/signup
+.signup-view {
+  text-align: center;
+  padding-top: 30px;
+}
+
 // view/users/edit
 .edit {
   text-align: center;
@@ -12,10 +18,11 @@
 }
 
 // view/users/show
-
 #about-user {
   margin: 0 auto;
   text-align: center;
   width: 60%;
   position: relative;
 }
+
+// view/pitches/new

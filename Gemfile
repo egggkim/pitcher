@@ -12,6 +12,8 @@ gem 'figaro'
 gem 'fog'
 gem 'rails_12factor', group: :production
 gem 'thin', group: :production
+gem 'masonry-rails', '~> 0.2.1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use SCSS for stylesheets

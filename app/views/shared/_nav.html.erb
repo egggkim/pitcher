@@ -1,11 +1,13 @@
-<nav role='navigation'>
-  <ul class='nav nav-tabs'>
-    <li role='presentation'><%= link_to image_tag('nav/allpitches.png', height: 25), pitches_path %></li>
-    <li role='presentation'><%= link_to image_tag('nav/allusers.png', height: 25), users_path %></li>
-    <li role='presentation'><%= link_to image_tag('nav/myprofile.png', height: 25), current_user %></li>    
-    <li role='presentation'><%= link_to image_tag('nav/logout.png', height: 25), logout_path, method: :delete %> </li>
-    <!-- remove Delete user functionality later -->    
-    <li role='presentation'><%= link_to "(Delete user)", user_path(current_user), method: :delete, data: {confirm: "Are you sure you want to delete #{current_user.first_name}?"} %></li>
-  </ul>
-</nav>
-  <p>Logged in as: <%= current_user.first_name %></p> 
+<div class='container-fluid'>
+  <nav role='navigation' class='navbar navbar-default'>
+    <ul class='nav nav-tabs nav pull-right'>
+        <li role='presentation'><%= link_to image_tag('nav/allpitches.png', height: 25), pitches_path %></li>
+        <li role='presentation'><%= link_to image_tag('nav/allusers.png', height: 25), users_path %></li>
+        <li role='presentation'><%= link_to image_tag('nav/myprofile.png', height: 25), current_user %></li>    
+        <li role='presentation'><%= link_to image_tag('nav/logout.png', height: 25), logout_path, method: :delete %> </li>
+        <!-- remove Delete user functionality later -->    
+        <li role='presentation'><%= link_to "(Delete user)", user_path(current_user), method: :delete, data: {confirm: "Are you sure you want to delete #{current_user.first_name}?"} %></li>
+        <li role='presentation'>Logged in as: <%= current_user.first_name %></li> 
+    </ul>
+  </nav>
+</div>

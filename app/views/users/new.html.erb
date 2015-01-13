@@ -1,35 +1,25 @@
-<%= image_tag 'welcome/signup.png', height: 50 %>
-
-<%= bootstrap_form_for @user do |f| %>
-  <div>
-    <%= f.text_field :first_name, label: "First Name:" %>
+<div class='signup-view'>
+  <div class='headers'>
+    <%= image_tag 'welcome/signup.png', height: 50 %>
   </div>
 
-  <div>
-    <%= f.text_field :middle_name, label: "Middle Name (optional):" %>
-  </div>
+  <div class='form-group'>
+    <%= bootstrap_form_for @user do |f| %>
+      <%= f.text_field :first_name, label: "First Name:" %>
 
-  <div>
-    <%= f.text_field :last_name, label: "Last Name:" %>
-  </div>
-  
-  <div>
-    <%= f.text_field :company, label: "Company (optional):" %>
-  </div>
-  
-  <div>
-    <%= f.email_field :email %>
-  </div>
-  
-  <div>
-    <%= f.password_field :password %>
-  </div>
+      <%= f.text_field :middle_name, label: "Middle Name (optional):" %>
 
-  <div>
-    <%= f.password_field :password_confirmation, label: "Password Confirmation:" %>
+      <%= f.text_field :last_name, label: "Last Name:" %>
+    
+      <%= f.text_field :company, label: "Company (optional):" %>
+    
+      <%= f.email_field :email %>
+    
+      <%= f.password_field :password %>
+
+      <%= f.password_field :password_confirmation, label: "Password Confirmation:" %>
+    
+      <%= f.submit "Sign me up!" %>
+    <% end %>
   </div>
-  
-  <div>
-    <%= f.submit "Sign me up!", class: 'btn btn-primary' %>
-  </div>
-<% end %>
+</div>

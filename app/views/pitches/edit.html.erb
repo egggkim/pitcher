@@ -1,27 +1,29 @@
-<% if pitch_owner %>
+<div class='container-fluid'>
+  <% if pitch_owner %>
 
-  <h1>Edit <%= @pitch.title %></h1>
+    <%= image_tag('models/editpitch.png', height: 60) %>
 
-  <%= bootstrap_form_for @pitch, :html => {:multipart => true} do |f| %>
+    <%= bootstrap_form_for @pitch, :html => {:multipart => true} do |f| %>
 
-    <div>
-      <%= f.text_field :title, label: "Title:" %>
-    </div>
-    
-    <div>
-      <%= f.text_area :description, label: "Description: " %>
-    </div>
+      <div>
+        <%= f.text_field :title, label: "Title:" %>
+      </div>
+      
+      <div>
+        <%= f.text_area :description, label: "Description: " %>
+      </div>
 
-    <div>
-      <%= f.file_field :image, label: "Update your thumbnail:" %>
-    </div>
+      <div>
+        <%= f.file_field :image, label: "Update your thumbnail:" %>
+      </div>
 
-    <div>
-      <%= f.submit %>
-    </div>
+      <div>
+        <%= f.submit %>
+      </div>
 
+    <% end %>
+
+  <% else %>
+    <%= render 'shared/error' %>
   <% end %>
-
-<% else %>
-  <%= render 'shared/error' %>
-<% end %>
+</div>
