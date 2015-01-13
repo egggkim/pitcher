@@ -1,20 +1,13 @@
 <% if logged_in? %>
   <h1>All users</h1>
-  <p><%= link_to "Sign Up", new_user_path %></p>
-
-  <% if logged_in? %>
-  <%= link_to 'Log Out', logout_path, method: :delete %>
-  <br>
-  Logged in as: <%= current_user.first_name %>
-  <% else %>
-    <%= link_to 'Log In', login_path %>
-  <% end %>
-
   <ul>
-    <% @users.each do |user| %>
+    <% @users.each do |u| %>
       <li>
-        <%= link_to user.first_name, user %>
+        <%= link_to u.first_name, user_path(u) %>
       </li>
     <% end %>
   </ul>
+
+<% else %>
+    <%= render 'shared/links' %>
 <% end %>

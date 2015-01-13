@@ -1,6 +1,7 @@
 <% if logged_in? %>
   <h1>All pitches</h1>
 
+  <%= link_to "Add a pitch", new_pitch_path %>
 <!-- filter all user pitches by keyword -->
 <%= form_tag("/pitches", method: "get") do %>
   <%= text_field_tag(:q) %>
@@ -17,6 +18,10 @@
       </li>
     <% end %>
   </ul>
+
+<% else %>  
+  <%= render 'shared/links' %>
 <% end %>
+
 
 

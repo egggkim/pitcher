@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if pitch_owner %>
 
   <h1>Edit <%= @pitch.title %></h1>
 
@@ -19,6 +19,9 @@
     <div>
       <%= f.submit %>
     </div>
+
   <% end %>
 
+<% else %>
+  <%= render 'shared/error' %>
 <% end %>

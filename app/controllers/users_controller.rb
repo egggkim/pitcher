@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_filter :require_login, :only => [:new]
+
   def index
     @users = User.all
   end
@@ -18,11 +20,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def edit
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def update

@@ -1,37 +1,45 @@
-<h1><%= @pitch.title %></h1>
-<h5>Posted on <%= @pitch.date_published %> by <%= link_to @pitch.user.first_name, user_path(@pitch.user) %></h5>
+<% if logged_in? %>
+  <h1><%= @pitch.title %></h1>
+  <h5>Posted on <%= @pitch.date_published %> by <%= link_to @pitch.user.first_name, user_path(@pitch.user) %></h5>
 
-<%= image_tag @pitch.image.url(:large) if @pitch.image.url(:large).present? %>
+  <%= image_tag @pitch.image.url(:large) if @pitch.image.url(:large).present? %>
 
-<p><%= @pitch.description %></p>
+  <p><%= @pitch.description %></p>
 
-<nav>
-  <%= link_to "Edit", edit_pitch_path(@pitch) %>
-  <%= link_to "Delete", pitch_path(@pitch), method: :delete, data: {confirm: "Are you sure you want to delete #{@pitch.title}?"} %>
-</nav>
-
-<h3>Comments</h3>
-<ul>
-  <% @pitch.comments.each do |comment| %>        
-    <li>
-      <%= comment.body %> -- <%= comment.commenter.try(:name) %> added: <%= comment.date_added %>
-    </li>
+  <!-- need to make this visible only to current user/user who owns the pitch -->
+  <% if pitch_owner %>
+    <nav>
+      <%= link_to "Edit", edit_pitch_path(@pitch) %>
+      <%= link_to "Delete", pitch_path(@pitch), method: :delete, data: {confirm: "Are you sure you want to delete #{@pitch.title}?"} %>
+    </nav>
   <% end %>
-</ul>
 
-<%= bootstrap_form_for [@pitch, @comment] do |f| %>
-  <%= f.fields_for :commenter_attributes do |commenter_fields| %>
+  <h3>Comments</h3>
+  <ul>
+    <% @pitch.comments.each do |comment| %>        
+      <li>
+        <%= comment.body %> -- <%= comment.commenter.try(:name) %> added: <%= comment.date_added %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= bootstrap_form_for [@pitch, @comment] do |f| %>
+    <%= f.fields_for :commenter_attributes do |commenter_fields| %>
       <div>
         <%= commenter_fields.text_field :name, label: "Name:" %>
       </div>
       <div>
           <%= commenter_fields.email_field :email %>
       </div>
-  <% end %>
+    <% end %>
       <div>
         <%= f.text_area :body, label: "New Comment:" %>
       </div>
       <%= f.submit "Add your comment!" %>
-<% end %>
+  <% end %>
 
-<%= link_to "Back to pitches", pitches_path %>
+  <%= link_to "Back to pitches", pitches_path %>
+
+<% else %>
+  <%= render 'shared/links' %>
+<% end %>
