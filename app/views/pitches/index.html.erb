@@ -1,18 +1,22 @@
-<div class='container-fluid pitches'>
+<div class='container-fluid'>
   <% if logged_in? %>
-    <%= image_tag('nav/allpitches.png', height: 60) %>
+
+    <div class='headers'>
+      <%= image_tag('nav/allpitches.png', height: 60) %> 
+    </div>
 
     <%= link_to "Add a pitch", new_pitch_path %>
     
   <!-- filter all user pitches by keyword -->
-  <%= form_tag("/pitches", method: "get") do %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Filter by Title") %>
-  <% end %>
+  <div class='form-group'>
+    <%= form_tag("/pitches", method: "get") do %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Filter by Title") %>
+    <% end %>
+  </div>  
 
   <!-- display all user pitches -->
-  <div id='masonry-container' class='transitions-enabled centered clearfix masonry'>
-    
+  <div class='row pitches transitions-enabled centered clearfix masonry'>
     <ul>
       <div>
         <% @pitches.each do |p| %>
