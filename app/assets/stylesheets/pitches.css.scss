@@ -21,5 +21,17 @@
 }
 
 .filter {
+  text-align: center;
   margin: 30px;
+  input {
+    width: 50%;
+    border-radius: 5px;
+    height: 30px;
+    border-style: none;
+    margin-right: 10px;
+  }
+  .submit {
+    width: 100px;
+    background-color: #ffcc66;
+  }
 }

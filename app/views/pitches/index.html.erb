@@ -4,14 +4,12 @@
     <div class='headers'>
       <%= image_tag('nav/allpitches.png', height: 60) %> 
     </div>
-
-    <%= link_to "Add a pitch", new_pitch_path %>
     
   <!-- filter all user pitches by keyword -->
   <div class='filter'>
     <%= form_tag("/pitches", method: "get") do %>
       <%= text_field_tag(:q) %>
-      <%= submit_tag("Filter by Title") %>
+      <%= submit_tag("Filter by Title", :class => 'submit') %>
     <% end %>
   </div>  
 

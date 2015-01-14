@@ -21,10 +21,6 @@
     <br>
     <div class='form-group'>
       <%= bootstrap_form_for [@pitch, @comment] do |f| %>
-        <%= f.fields_for :commenter_attributes do |commenter_fields| %>
-        <%= commenter_fields.text_field :name, label: "Name:" %>
-        <%= commenter_fields.email_field :email %>
-        <% end %>
         <%= f.text_area :body, label: "New Comment:" %>
         
         <%= f.submit "Add your comment!" %>
@@ -33,7 +29,7 @@
       <h3>Comments</h3>
         <div class='test-comments centered'>
           <ul>
-            <% @pitch.comments.each do |comment| %>   <li><%= comment.body %> -- <%= comment.commenter.try(:name) %> added: <%= comment.date_added %></li>
+            <% @pitch.comments.each do |comment| %>   <li><%= comment.body %> -- added by: <%= comment.commenter %> on: <%= comment.date_added %></li>
             <% end %>
           </ul>
       <% end %> 
