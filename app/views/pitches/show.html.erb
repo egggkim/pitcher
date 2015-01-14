@@ -9,7 +9,7 @@
       <p class='pitch-descrip'><%= @pitch.description %></p>
 
     <!-- only allows pitch owner to edit or delete the pitch -->
-    <br>
+    <br> 
     <% if pitch_owner %>
       <span id='pitch-edit'>
         <%= link_to image_tag('models/editpitch.png', height: 20), edit_pitch_path(@pitch) %>

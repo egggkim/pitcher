@@ -6,13 +6,13 @@
 
   <div class='row users'>
     <!-- log in link -->
-    <h3>Already a member?</h3>
+    <h5 class='welcome-upcase'>Already a member?</h5>
     <%= link_to login_path do %>
     <%= image_tag 'welcome/login.png', height: 35 %> 
     <% end %>
 
       <!-- sign up link -->
-    <h3>Not a user yet?</h3>
+    <h5 class='welcome-upcase'>Not a user yet?</h5>
     <%= link_to new_user_path do %>
     <%= image_tag 'welcome/signup.png', height: 35 %>
     <% end %>
