@@ -1,4 +1,4 @@
-<div class='container-fluid'>
+<div class='container-fluid users-all'>
   <% if logged_in? %>
 
     <div class='headers'>
@@ -6,16 +6,18 @@
     </div>
 
     <div id='filter-company'>
-      <%= form_tag("/pitches", method: "get") do %>
+      <%= form_tag("/users", method: "get") do %>
         <%= text_field_tag(:query) %>
         <%= submit_tag("Filter by Company", :id => 'submit-company') %>
       <% end %>
     </div>  
 
-    <ul>
+    <ul class='users-view'>
       <% @users.each do |u| %>
-        <li>
-          <%= link_to u.first_name, user_path(u) %> (<%= u.company if u.company.present? %>)
+        <li class='user-avatar-show'>
+          <%= link_to (image_tag u.avatar.url(:thumb)), u %>
+        </li>
+        <li class='user-name-company'><%= link_to u.first_name, user_path(u) %><br><%= link_to u.company, user_path(u) %>
         </li>
       <% end %>
     </ul>

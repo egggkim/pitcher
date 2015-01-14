@@ -4,8 +4,8 @@
       <li><%= link_to image_tag('nav/allusers.png', height: 25), users_path %></li>
       <li><%= link_to image_tag('nav/allpitches.png', height: 25), pitches_path %></li>
       <li><%= link_to image_tag('models/newpitch.png', height: 25), new_pitch_path %>
-    </span>
       <li><%= link_to image_tag('nav/myprofile.png', height: 25), current_user %></li>    
+      <li><%= link_to image_tag('models/editmyprofile.png', height: 25), edit_user_path(current_user) %></li>
       <li><%= link_to image_tag('nav/logout.png', height: 25), logout_path, method: :delete %> </li>
 
       <!-- remove Delete user functionality later -->

@@ -63,6 +63,26 @@
   position: relative;
 }
 
-.user-avatar img {
-  border-radius: 100%;
+.users-view {
+  width: 130px;
+}
+
+.user-avatar {
+  text-align: center;
+    img {
+    border-radius: 100%;
+    }
+}
+
+.user-avatar-show {
+  width: 130px;
+    img {
+    border-radius: 100%;
+    margin: 0;
+    }
+}
+
+.user-name-company {
+  width: 130px;
+  text-align: center;
 }
