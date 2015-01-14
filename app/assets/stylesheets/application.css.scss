@@ -61,7 +61,7 @@ li {
 nav ul {
   position: fixed;
   right: 10px;
-  height: 50px;
+  height: 45px;
   background-color: white;
   border-radius: 15px;
   z-index: 1;
@@ -88,7 +88,8 @@ footer {
 
 // all page headers (ie. log in, sign up, your profile)
 .headers {
-  margin-bottom: 30px;
+  margin: 20px 0px 30px 0px;
+  text-align: center;
 }
 
 .centered {
@@ -98,4 +99,16 @@ footer {
 .pitches {
   margin: 0 auto;
   width: 100%;
+}
+
+.error {
+  margin-top: 20px;
+  width: 60%;
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
+  padding-bottom: 20px;
+    .error-test {
+      width: 40%;
+    }
 }

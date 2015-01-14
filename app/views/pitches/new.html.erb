@@ -1,15 +1,11 @@
 <div class='container-fluid'>
   <% if logged_in? %>
 
-    <%= image_tag('models/newpitch.png', height: 60) %>
-
-    <ul>
-      <% @pitch.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+    <div class='headers'>
+      <%= image_tag('models/newpitch.png', height: 60) %>
+    </div>
 
     <%= render "pitches/form", object: @pitch %>
-
+    
   <% end %>
 </div>

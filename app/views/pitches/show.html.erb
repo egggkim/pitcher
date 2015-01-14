@@ -1,47 +1,52 @@
-<% if logged_in? %>
-  <h1><%= @pitch.title %></h1>
-  <h5>Posted on <%= @pitch.date_published %> by <%= link_to @pitch.user.first_name, user_path(@pitch.user) %></h5>
+<div class='container-fluid pitch-show'>
+  <% if logged_in? %>
+    <!-- currently pitch-info class has no styling -->
+    <div class='pitch-info centered'>
+      <h1 id='title'><%= @pitch.title %></h1>
+      <h5>Posted on <%= @pitch.date_published %> by <%= link_to @pitch.user.first_name, user_path(@pitch.user) %></h5>
 
-  <%= image_tag @pitch.image.url(:large), :class => "img-responsive" if @pitch.image.url(:large).present?%>
+      <%= image_tag @pitch.image.url(:large), :class => "img-responsive centered" if @pitch.image.url(:large).present?%>
 
-  <p><%= @pitch.description %></p>
+      <p id='pitch-descrip'><%= @pitch.description %></p>
+    </div>
 
-  <!-- need to make this visible only to current user/user who owns the pitch -->
-  <% if pitch_owner %>
-    <nav>
-      <%= link_to "Edit", edit_pitch_path(@pitch) %>
-      <%= link_to "Delete", pitch_path(@pitch), method: :delete, data: {confirm: "Are you sure you want to delete #{@pitch.title}?"} %>
-    </nav>
-  <% end %>
-
-  <h3>Comments</h3>
-  <ul>
-    <% @pitch.comments.each do |comment| %>        
-      <li>
-        <%= comment.body %> -- <%= comment.commenter.try(:name) %> added: <%= comment.date_added %>
-      </li>
+    <!-- only allows pitch owner to edit or delete the pitch -->
+    <% if pitch_owner %>
+      <nav>
+        <%= link_to "Edit", edit_pitch_path(@pitch) %>
+        <%= link_to "Delete", pitch_path(@pitch), method: :delete, data: {confirm: "Are you sure you want to delete #{@pitch.title}?"} %>
+      </nav>
     <% end %>
-  </ul>
 
-  <div class='form-group'>
-    <%= bootstrap_form_for [@pitch, @comment] do |f| %>
-      <%= f.fields_for :commenter_attributes do |commenter_fields| %>
-        <div>
-          <%= commenter_fields.text_field :name, label: "Name:" %>
-        </div>
-        <div>
-            <%= commenter_fields.email_field :email %>
-        </div>
+    <h3>Comments</h3>
+    <ul>
+      <% @pitch.comments.each do |comment| %>        
+        <li>
+          <%= comment.body %> -- <%= comment.commenter.try(:name) %> added: <%= comment.date_added %>
+        </li>
       <% end %>
-        <div>
-          <%= f.text_area :body, label: "New Comment:" %>
-        </div>
-        <%= f.submit "Add your comment!" %>
-    <% end %>
-  </div>
-  
-  <%= link_to "Back to pitches", pitches_path %>
+    </ul>
 
-<% else %>
-  <%= render 'shared/links' %>
-<% end %>
+    <div class='form-group'>
+      <%= bootstrap_form_for [@pitch, @comment] do |f| %>
+        <%= f.fields_for :commenter_attributes do |commenter_fields| %>
+          <div>
+            <%= commenter_fields.text_field :name, label: "Name:" %>
+          </div>
+          <div>
+              <%= commenter_fields.email_field :email %>
+          </div>
+        <% end %>
+          <div>
+            <%= f.text_area :body, label: "New Comment:" %>
+          </div>
+          <%= f.submit "Add your comment!" %>
+      <% end %>
+    </div>
+    
+    <%= link_to "Back to pitches", pitches_path %>
+
+  <% else %>
+    <%= render 'shared/links' %>
+  <% end %>
+</div>

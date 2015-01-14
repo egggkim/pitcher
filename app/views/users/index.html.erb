@@ -1,13 +1,19 @@
-<% if logged_in? %>
-  <%= image_tag('nav/allusers.png', height: 60) %>
-  <ul>
-    <% @users.each do |u| %>
-      <li>
-        <%= link_to u.first_name, user_path(u) %>
-      </li>
-    <% end %>
-  </ul>
+<div class='container-fluid'>
+  <% if logged_in? %>
 
-<% else %>
+    <div class='headers'>
+      <%= image_tag('nav/allusers.png', height: 60) %>
+    </div>
+
+    <ul>
+      <% @users.each do |u| %>
+        <li>
+          <%= link_to u.first_name, user_path(u) %>
+        </li>
+      <% end %>
+    </ul>
+
+  <% else %>
     <%= render 'shared/links' %>
-<% end %>
+  <% end %>
+</div>

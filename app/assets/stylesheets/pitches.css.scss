@@ -1,3 +1,17 @@
 // Place all the styles related to the Pitches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pitch-info {
+  background-color: white;
+  text-align: center;
+  max-width: 60%;
+  border-radius: 15px;
+  padding: 1px 15px 15px 15px;
+    img {
+      border-radius: 15px;
+    }
+    #pitch-descrip {
+      margin-top: 10px;
+    }
+}

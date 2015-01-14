@@ -1,11 +1,15 @@
-<footer>
-  <div>
-    <%= link_to image_tag('footer/about.png', height: 20), about_path %>
-    <%= link_to image_tag('footer/contact.png', height: 20), contact_path %>
-  </div>
-  <div class='social'>
-    <%= link_to image_tag('social/twitter.png', height: 20), 'http://twitter.com' %>
-    <%= link_to image_tag('social/facebook.png', height: 20), 'http://facebook.com' %>
-    <%= link_to image_tag('social/instagram.png', height: 20), 'http://instagram.com/pitchrapp' %>
-  </div>
-</footer>
+<div class='container-fluid'>
+  <footer>
+    <!-- about and contact links -->
+    <div>
+      <%= link_to image_tag('footer/about.png', height: 20), about_path %>
+      <%= link_to image_tag('footer/contact.png', height: 20), contact_path %>
+    </div>
+    
+    <div class='social'>
+      <%= link_to image_tag('social/twitter.png', height: 20), 'http://twitter.com' %>
+      <%= link_to image_tag('social/facebook.png', height: 20), 'http://facebook.com' %>
+      <%= link_to image_tag('social/instagram.png', height: 20), 'http://instagram.com/pitchrapp' %>
+    </div>
+  </footer>
+</div>
