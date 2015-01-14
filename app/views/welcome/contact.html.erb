@@ -1,12 +1,15 @@
 <div class='contact'>
-  <%= image_tag 'footer/contact.png', height: 50 %>
+  <%= image_tag 'footer/contact.png', height: 50, :id => 'headers' %>
+  <hr>
   <h3>We love our pitchrs!</h3>
   <p>Whether it's comments, suggestions, complaints, or you just want to say hello, we would love to hear from you. We're always a work in progress so please bear with us as we work out our site's full functionality. 
-  </p>
+  
+  <br> 
+  <br> 
 
-  <br>
-
-  <p>Disclaimer: No copyright infringement intended. If you feel any content on this site has been wrongfully shared, please contact us below and we will respond to you as soon as we can to make amends.</p>
-
-  <%= mail_to "karenskimdev@gmail.com",(image_tag 'footer/email.png', height: 35), subject: "Hello, Pitchr people!" %>
+  Disclaimer: No copyright infringement intended. If you feel any content on this site has been wrongfully shared, please contact us below and we will respond to you as soon as we can to make amends.</p>
+  
+  <hr>
+  
+  <%= mail_to "karenskimdev@gmail.com",(image_tag 'footer/email.png', height: 35, :id => 'email'), subject: "Hello, Pitchr people!" %>
 </div>

@@ -2,19 +2,50 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@mixin form {
+  text-align: left;
+  background-color: white;
+  width: 50%;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
 //view/signup
 .signup-view {
-  text-align: center;
-  padding-top: 30px;
+  @include form;
+}
+
+//view/login
+.login-view {
+  @include form;
 }
 
 // view/users/edit
-.edit {
-  text-align: center;
-  .header {
-    margin-top: 10px;
-    margin-bottom: 30px;
+.edit-view {
+  @include form;
+}
+
+// view/pitch/edit
+.new-view {
+  @include form;
+  padding-bottom: 20px;
+}
+
+// view/pitch/show#comments
+.comment-view {
+  @include form;
+  margin: 0 auto;
+  padding: 20px;
+  ul { 
+    padding: 0;
+    overflow: scroll;
+    margin-left: 0;
   }
+}
+
+#edit-my-profile {
+  width: 100%;
+  text-align: center;
 }
 
 // view/users/show
