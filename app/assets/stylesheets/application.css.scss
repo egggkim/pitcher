@@ -41,9 +41,9 @@ body {
   height: 100%;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: $font;
-  letter-spacing: 3px;
+h1, h2, h3, h4, h5, h6, p, li {
+  font-family: 'Open Sans', sans-serif;
+  color: #666666;
 }
 
 // form {
@@ -72,6 +72,14 @@ nav ul {
   background-color: white;
   z-index: 1;
   width: 100%;
+}
+
+a {
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 3px;
+  color: #999999;
 }
 
 footer {
@@ -132,4 +140,12 @@ footer {
     .error-test {
       width: 40%;
     }
+    .error-upcase {
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+}
+
+.panel-footer {
+  overflow: scroll;
 }

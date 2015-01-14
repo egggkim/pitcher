@@ -2,8 +2,8 @@
   <% if logged_in? %>
     <!-- currently pitch-info class has no styling -->
     <div class='pitch-info centered'>
-      <h1><%= @pitch.title %></h1>
-      <h5>Posted on <%= @pitch.date_published %> by <%= link_to @pitch.user.first_name, user_path(@pitch.user) %></h5>
+      <h3 class='pitch-title-upcase'><%= @pitch.title %></h3>
+      <h6>Posted on <%= @pitch.date_published %> by <%= link_to @pitch.user.first_name, user_path(@pitch.user) %></h6>
       <%= image_tag @pitch.image.url(:large), :class => "img-responsive centered pitch-img" if @pitch.image.url(:large).present?%>
       <p class='pitch-descrip'><%= @pitch.description %></p>
 
@@ -20,7 +20,7 @@
     <!-- comments view -->
     <div class='form-group comment-view'>
     <!-- display comments inside of form -->
-        <h3>Comments</h3><hr>
+        <h3 class='comments-upcase'>Comments</h3><hr>
           <div>
             <ul>
               <% @pitch.comments.each do |comment| %>   <li><%= comment.body %> <br> <strong>commented by:</strong> <%= comment.commenter %> on: <%= comment.date_added %></li>
@@ -34,8 +34,6 @@
       <% end %> 
     </div>
     
-    <%= link_to "Back to pitches", pitches_path %>
-
   <% else %>
     <%= render 'shared/links' %>
   <% end %>

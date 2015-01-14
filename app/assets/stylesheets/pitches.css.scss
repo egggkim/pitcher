@@ -21,7 +21,8 @@
 }
 
 @mixin filter {
-    text-align: center;
+  font-family: 'open sans', sans serif;
+  text-align: center;
   margin: 30px;
   input {
     width: 50%;
@@ -37,6 +38,8 @@
   #submit-title {
     width: 100px;
     background-color: #ffcc66;
+    text-transform: uppercase;
+    font-size: 0.8em;
   }
 }
 
@@ -45,5 +48,25 @@
   #submit-company {
     width: 130px;
     background-color: #ffcc66;
+    text-transform: uppercase;
+    font-size: 0.8em;
   }
+}
+
+.pitch-title {
+  text-align: center;
+  overflow: hidden;
+}
+
+.pitch-title-upcase {
+  text-transform: uppercase;
+}
+
+.comments-upcase {
+  text-transform: uppercase;
+}
+
+.user-name-upcase {
+  text-transform: uppercase;
+  color: #666666;
 }
