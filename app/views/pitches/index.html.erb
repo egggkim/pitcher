@@ -8,7 +8,7 @@
     <%= link_to "Add a pitch", new_pitch_path %>
     
   <!-- filter all user pitches by keyword -->
-  <div class='form-group'>
+  <div class='filter'>
     <%= form_tag("/pitches", method: "get") do %>
       <%= text_field_tag(:q) %>
       <%= submit_tag("Filter by Title") %>
