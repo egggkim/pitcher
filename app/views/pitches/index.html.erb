@@ -6,10 +6,10 @@
     </div>
     
   <!-- filter all user pitches by keyword -->
-  <div class='filter'>
+  <div id='filter-title'>
     <%= form_tag("/pitches", method: "get") do %>
       <%= text_field_tag(:q) %>
-      <%= submit_tag("Filter by Title", :class => 'submit') %>
+      <%= submit_tag("Filter by Title", :id => 'submit-title') %>
     <% end %>
   </div>  
 

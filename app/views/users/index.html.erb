@@ -5,10 +5,17 @@
       <%= image_tag('nav/allusers.png', height: 60) %>
     </div>
 
+    <div id='filter-company'>
+      <%= form_tag("/pitches", method: "get") do %>
+        <%= text_field_tag(:query) %>
+        <%= submit_tag("Filter by Company", :id => 'submit-company') %>
+      <% end %>
+    </div>  
+
     <ul>
       <% @users.each do |u| %>
         <li>
-          <%= link_to u.first_name, user_path(u) %>
+          <%= link_to u.first_name, user_path(u) %> (<%= u.company if u.company.present? %>)
         </li>
       <% end %>
     </ul>

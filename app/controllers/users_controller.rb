@@ -2,7 +2,11 @@ class UsersController < ApplicationController
   skip_before_filter :require_login, :only => [:new]
 
   def index
-    @users = User.all
+    if params[:query]
+      @users = User.where(company:/#{params[:query]}/i)
+    else
+      @users = User.all.order("created_at DESC")
+    end
   end
 
   def new

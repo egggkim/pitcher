@@ -25,10 +25,17 @@
   @include form;
 }
 
-// view/pitch/edit
+// view/pitch/new
 .new-view {
   @include form;
   padding-bottom: 20px;
+}
+
+// view/pitch/edit
+.edit-pitch-view {
+  @include form;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 // view/pitch/show#comments

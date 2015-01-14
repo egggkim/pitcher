@@ -20,8 +20,8 @@
     }
 }
 
-.filter {
-  text-align: center;
+@mixin filter {
+    text-align: center;
   margin: 30px;
   input {
     width: 50%;
@@ -30,8 +30,20 @@
     border-style: none;
     margin-right: 10px;
   }
-  .submit {
+}
+
+#filter-title {
+  @include filter;
+  #submit-title {
     width: 100px;
+    background-color: #ffcc66;
+  }
+}
+
+#filter-company {
+  @include filter;
+  #submit-company {
+    width: 130px;
     background-color: #ffcc66;
   }
 }

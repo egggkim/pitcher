@@ -1,11 +1,11 @@
 <div class='container-fluid'>
   <% if pitch_owner %>
 
-    <div class='headers'>
-      <%= image_tag('models/editpitch.png', height: 60) %>
-    </div>
-
-    <div class='form-group'>
+    <div class='form-group edit-pitch-view'>
+      <div class='headers'>
+        <%= image_tag('models/editpitch.png', height: 60) %>
+      </div>
+      <hr>
       <%= bootstrap_form_for @pitch, :html => {:multipart => true} do |f| %>
 
           <%= f.text_field :title, label: "Title:" %>
