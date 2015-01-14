@@ -5,6 +5,7 @@
       <h3 class='pitch-title-upcase'><%= @pitch.title %></h3>
       <h6>Posted on <%= @pitch.date_published %> by <%= link_to @pitch.user.first_name, user_path(@pitch.user) %></h6>
       <%= image_tag @pitch.image.url(:large), :class => "img-responsive centered pitch-img" if @pitch.image.url(:large).present?%>
+      <br>
       <p class='pitch-descrip'><%= @pitch.description %></p>
 
     <!-- only allows pitch owner to edit or delete the pitch -->
