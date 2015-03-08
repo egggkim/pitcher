@@ -3,12 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @mixin form {
+  margin: 0 auto;
+  padding: 20px;
   text-align: left;
   background-color: white;
-  width: 50%;
+  width: 40%;
   border-radius: 20px;
   margin-top: 30px;
   font-family: 'open sans', sans serif;
+  .input {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+  .login-btn {
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    background-color: #eeeeee;
+    text-align: center;
+  }
 }
 
 //view/signup
