@@ -1,21 +1,17 @@
-<div class='container-fluid signup-view'>
+<div class='signup-view'>
   <div class='headers'>
     <%= image_tag 'welcome/signup.png', height: 50 %>
   </div>
-
   <hr>
-
-  <div class='form-group'>
-    <%= bootstrap_form_for @user do |f| %>
-      <%= f.text_field :first_name, label: "First Name:" %>
-      <%= f.text_field :middle_name, label: "Middle Name (optional):" %>
-      <%= f.text_field :last_name, label: "Last Name:" %>
-      <%= f.text_field :company, label: "Company (optional):" %>
-      <%= f.email_field :email %>
-      <%= f.password_field :password %>
-      <%= f.password_field :password_confirmation, label: "Password Confirmation:" %>
-    
-      <%= f.submit "Sign me up!" %>
-    <% end %>
-  </div>
+  <%= bootstrap_form_for @user do |f| %>
+    <%= f.text_field :first_name, label: "First Name:" %>
+    <%= f.text_field :middle_name, label: "Middle Name (optional):" %>
+    <%= f.text_field :last_name, label: "Last Name:" %>
+    <%= f.text_field :company, label: "Company (optional):" %>
+    <%= f.email_field :email %>
+    <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation, label: "Password Confirmation:" %>
+  
+    <%= f.submit "Sign me up!" %>
+  <% end %> 
 </div>

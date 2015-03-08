@@ -31,6 +31,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
     'default-user.png' 
   end
 
+  # for user personal avatar profile photo
   version :thumb do
     process :resize_to_fill => [130, 130]
   end

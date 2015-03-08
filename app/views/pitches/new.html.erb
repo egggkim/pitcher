@@ -1,8 +1,8 @@
-<div class='container-fluid new-view'>
+<div class='new-view'>
   <% if logged_in? %>
 
     <div class='headers'>
-      <%= image_tag('models/newpitch.png', height: 60) %>
+      <%= image_tag('nav/newpitch.png', height: 60) %>
     </div>
     <hr>
     <%= render "pitches/form", object: @pitch %>

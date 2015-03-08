@@ -30,6 +30,6 @@ class User
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false}, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
-  validates :password, presence: true, length:{ in: 6..20 }, confirmation: true, on: :create #this will only validate on create # :if => :password, :unless => :password_hash.present?
+  validates :password, presence: true, length:{ in: 6..20 }, confirmation: true, on: :create 
 
 end

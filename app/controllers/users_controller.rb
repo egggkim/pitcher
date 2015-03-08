@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-  skip_before_filter :require_login, :only => [:new]
-
   def index
     if params[:query]
+      # [:query] defined in view as filter input field
       @users = User.where(company:/#{params[:query]}/i)
     else
       @users = User.all.order("created_at DESC")
@@ -19,7 +18,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id.to_s
       redirect_to user_path(@user)
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -36,7 +35,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
       redirect_to user_path(@user)
     else
-      render 'edit'
+      render :edit
     end
   end
 

@@ -1,22 +1,22 @@
-<div class='container-fluid login-view'>
+<div class='login-view'>
   <div class='headers'>
-    <%= image_tag 'welcome/login.png', height: 50 %>
+    <%= image_tag 'welcome/login.png', height: 60 %>
   </div>
   
   <hr>
   <!-- flash class currently has no styling 12/13/14 -->
   <div class='flash'>
+    <!-- is this proper syntax for flash[:notice] view? -->
     <% if flash[:notice] %>
       <%= flash[:notice] %>
     <% end %>
   </div>
 
-  <div class='form-group'>
-    <%= bootstrap_form_for :login do |f| %>
-      <%= f.email_field :email %>
-      <%= f.password_field :password %>
+  <%= bootstrap_form_for :login do |f| %>
+    <%= f.email_field :email %>
+    <%= f.password_field :password %>
 
-      <%= f.submit 'Log in' %>
-    <% end %>
-  </div>
+    <%= f.submit 'Log in' %>
+  <% end %>
+
 </div>

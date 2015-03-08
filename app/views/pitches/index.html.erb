@@ -1,38 +1,34 @@
-<div class='container-fluid'>
-  <% if logged_in? %>
+<% if logged_in? %>
 
-    <div class='headers'>
-      <%= image_tag('nav/allpitches.png', height: 60) %> 
-    </div>
-    
-  <!-- filter all user pitches by keyword -->
-  <div id='filter-title'>
-    <%= form_tag("/pitches", method: "get") do %>
-      <%= text_field_tag(:q) %>
-      <%= submit_tag("Filter by Title", :id => 'submit-title') %>
-    <% end %>
-  </div>  
-
-  <!-- display all user pitches -->
-  <div class='row pitches transitions-enabled centered clearfix masonry'>
-    <ul>
-      <div>
-        <% @pitches.each do |p| %>
-          <li class='box panel panel-default'>
-            <%= link_to (image_tag p.image.url(:small)), p %>
-            <div class='panel-footer pitch-title'>
-              <%= link_to p.title, p %>
-            </div>
-          </li>
-        <% end %>
-      </div>
-    </ul>
-
+  <div class='headers'>
+    <%= image_tag('nav/allpitches.png', height: 60) %> 
   </div>
-
-  <% else %>  
-    <%= render 'shared/links' %>
+  
+<!-- filter all user pitches by keyword -->
+<div id='filter-title'>
+  <%= form_tag("/pitches", method: "get") do %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Filter by Title", :id => 'submit-title') %>
   <% end %>
+</div>  
+
+<!-- display all user pitches -->
+<div class='row pitches transitions-enabled centered clearfix masonry'>
+  <ul>
+    <div>
+      <% @pitches.each do |p| %>
+        <li class='box panel panel-default'>
+          <%= link_to (image_tag p.image.url(:small)), p %>
+          <div class='panel-footer pitch-title'>
+            <%= link_to p.title, p %>
+          </div>
+        </li>
+      <% end %>
+    </div>
+  </ul>
+
 </div>
 
-
+<% else %>  
+  <%= render 'shared/links' %>
+<% end %>

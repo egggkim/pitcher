@@ -31,10 +31,12 @@ class ImageUploader < CarrierWave::Uploader::Base
     'default-pitch.png'
   end
 
+  # for pitches index view
   version :small do
     process :resize_to_fit => [250, nil]
   end
 
+  # for pitch show view
   version :large do
     process :resize_to_fit => [500, nil]
   end

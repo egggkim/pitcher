@@ -21,7 +21,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-$font: 'Amatic SC', cursive;
+$font: 'Open Sans', sans-serif;
 
 html {
   height: 100%;
@@ -29,48 +29,41 @@ html {
   margin: 0;
 }
 
+body {
+  background-color: #efefef;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-left: 0;
+    // this padding fixes nav-bar
+}
+
+// each view is rendered inside of the 'main' div
 .main {
   min-height: 100%;
   margin-top: 45px;
-}
-
-body {
-  position: relative;
-  background-color: #efefef;
-  bottom: 35px;
-  margin-bottom: 100px;
-  height: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6, p, li {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $font;
   color: #666666;
-}
-
-// form {
-//   background-color: white;
-//   border: 1px solid #d3d3d3;
-//   border-radius: 20px;
-//   margin: 0 auto;
-//   padding: 30px;
-//   width: 50%;
-// }
-
-.testing-things {
-  border-radius: none;
-  padding: none;
-}
-
-li {
-  list-style: none;
-  margin-bottom: 15px;
 }
 
 nav ul {
   position: fixed;
   height: 45px;
-  background-color: white;
   width: 100%;
+  text-align: right;
+  z-index: 1;
+}
+
+// applies to users and pitches index and nav li
+li {
+  list-style: none;
+  margin-bottom: 15px;
 }
 
 .navbar-header {
@@ -78,7 +71,7 @@ nav ul {
 }
 
 a {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $font;
   text-transform: uppercase;
   font-size: 0.75em;
   letter-spacing: 3px;

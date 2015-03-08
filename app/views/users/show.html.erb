@@ -1,35 +1,31 @@
-<div class='container-fluid'>
-  <% if logged_in? %>
-    <div id='about-user'>
-      <h1 class='user-name-upcase'><%= @user.first_name %> <%= @user.middle_name %> <%= @user.last_name %></h1>
-      <div class='user-avatar'>
-        <%= image_tag @user.avatar.url(:thumb) %>
-      </div>
-      <br>
-      <p><%= @user.about %></p>
+<% if logged_in? %>
+  <div id='about-user'>
+    <h1 class='user-name-upcase'><%= @user.first_name %> <%= @user.middle_name %> <%= @user.last_name %></h1>
+    <div class='user-avatar'>
+      <%= image_tag @user.avatar.url(:thumb) %>
     </div>
+    <br>
+    <p><%= @user.about %></p>
+  </div>
+  <hr>
+  <div class='headers'>
+    <%= image_tag('nav/mypitches.png', height: 40) %>
+  </div>
 
-    <hr>
+  <div class='row pitches transitions-enabled centered clearfix masonry'>
+    <ul>
+      <% @user.pitches.each do |p| %>
+        <li class='box panel panel-default'>
+          <br>
+          <%= link_to (image_tag p.image.url(:small)), p %>
+          <div class='panel-body'>
+            <%= link_to p.title, p %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
-    <div class='headers'>
-      <%= image_tag('nav/mypitches.png', height: 40) %>
-    </div>
-
-    <div class='row pitches transitions-enabled centered clearfix masonry'>
-      <ul>
-        <% @user.pitches.each do |p| %>
-          <li class='box panel panel-default'>
-            <br>
-            <%= link_to (image_tag p.image.url(:small)), p %>
-            <div class='panel-body'>
-              <%= link_to p.title, p %>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-
-  <% else %>
-    <%= render 'shared/links' %>
-  <% end %>
-</div>
+<% else %>
+  <%= render 'shared/links' %>
+<% end %>   

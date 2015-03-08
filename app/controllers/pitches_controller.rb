@@ -1,6 +1,7 @@
 class PitchesController < ApplicationController
   def index
     if params[:q]
+      # params[:q] defined in view as user-input filter field
       @pitches = Pitch.where(title:/#{params[:q]}/i)
     else
       @pitches = Pitch.all.order("created_at DESC")
@@ -17,7 +18,7 @@ class PitchesController < ApplicationController
     if @pitch.save
       redirect_to pitch_path(@pitch)
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -35,7 +36,7 @@ class PitchesController < ApplicationController
     if @pitch.update_attributes(pitch_params)
       redirect_to pitch_path(@pitch)
     else
-      render 'edit'
+      render :edit
     end
   end
 
