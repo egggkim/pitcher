@@ -32,6 +32,21 @@
   }
 }
 
+@mixin titles {
+  font-family: bebas;
+  letter-spacing: 2px;
+}
+
+.pink-title {
+  @include titles;
+  color: #f9cbcd;
+}
+
+.blue-title {
+  @include titles;
+  color: #81cdee;
+}
+
 //view/signup
 .signup-view, 
 //view/login

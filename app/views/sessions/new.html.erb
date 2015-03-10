@@ -1,12 +1,10 @@
 <div class='login-view'>
   <div class='headers'>
-    <%= image_tag 'welcome/login.png', height: 30 %>
+    <h2 class="blue-title">Log In</h2>
   </div>
   
   <hr>
-  <!-- flash class currently has no styling 12/13/14 -->
   <div class='flash'>
-    <!-- is this proper syntax for flash[:notice] view? -->
     <% if flash[:notice] %>
       <%= flash[:notice] %>
     <% end %>
