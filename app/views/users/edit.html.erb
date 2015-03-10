@@ -2,7 +2,7 @@
   <% if @user = current_user %>
 
     <div class='headers'>
-      <%= image_tag 'models/editprofileheader.png', height: 60 %>
+      <%= image_tag 'models/editprofileheader.png', height: 40 %>
     </div>
     <hr>
       <%= bootstrap_form_for current_user, :html => {:multipart => true} do |f| %>
@@ -17,7 +17,6 @@
         <%= f.submit "Update me" %>
       <% end %>
   <% else %>
-    <!-- this render is supposed to show when a user tries to edit someone else's profile // currently immediately redirects to current user's profile edit view -->
     <%= render 'shared/error' %>
   <% end %>
 </div>

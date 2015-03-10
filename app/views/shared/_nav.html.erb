@@ -1,13 +1,13 @@
 <nav>
   <ul class='nav nav'>
-    <li><%= link_to "Members", users_path %></li>
-    <li><%= link_to "Pitches", pitches_path %></li>
-    <li><%= link_to "New Pitch", new_pitch_path %></li>
     <li><%= link_to "My Profile", current_user %>
-      <ul>
-        <li><%= link_to "Edit My Profile", edit_user_path(current_user) %></li>
-      </ul>
-    </li>
+        <ul>
+          <li><%= link_to "Edit My Profile", edit_user_path(current_user) %></li>
+        </ul>
+      </li>
+    <li><%= link_to "New Pitch", new_pitch_path %></li>
+    <li><%= link_to "Pitches", pitches_path %></li>
+    <li><%= link_to "Members", users_path %></li>    
   </ul>
 </nav>
 
@@ -15,32 +15,5 @@
 </div>
 
 <style type="text/css">
-    ul{
-        padding: 0;
-        list-style: none;
-    }
-    ul li{
-        float: left;
-        width: 150px;
-        text-align: center;
-        line-height: 21px;
-    }
-    ul li a{
-        display: block;
-        padding: 5px 10px;
-        color: #333;
-        background: #f2f2f2;
-        text-decoration: none;
-    }
-    ul li a:hover{
-        color: black;
-        background: #939393;
-        text-decoration: none;
-    }
-    ul li ul{
-        display: none;
-    }
-    ul li:hover ul{
-        display: block; /* display the dropdown */
-    }
+  
 </style>
