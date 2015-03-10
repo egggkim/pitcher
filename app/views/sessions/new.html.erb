@@ -1,4 +1,5 @@
-<%= image_tag("logos/pitchr-logo.png", height: 150, :class => "header-logo") %>
+<br>
+<%= image_tag("logos/pitchr-logo.png", height: 80, :class => "header-logo") %>
 <div class='login-view'>
   <div class='headers'>
     <%= image_tag 'welcome/login.png', height: 40 %>
@@ -15,12 +16,14 @@
 
   <div class="input">
     <%= bootstrap_form_for :login do |f| %>
-      <%= f.email_field :email %>
-      <%= f.password_field :password %>
+      <%= f.email_field :email, label: "Email:" %>
+      <%= f.password_field :password, label: "Password:" %>
 
       <%= f.submit 'Log in', :class => "login-btn" %>
     <% end %>
   </div>
+
+  <p class="msg"><%= link_to "Not a member? Sign up here.", signup_path %></p>
 </div>
 <br>
 <%= link_to "Cancel", root_path %>

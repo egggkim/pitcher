@@ -4,41 +4,36 @@
 
 @mixin form {
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
   text-align: left;
   background-color: white;
-  width: 40%;
-  border-radius: 20px;
-  margin-top: 30px;
-  font-family: 'open sans', sans serif;
+  width: 400px;
+  font-family: 'open sans', 'sans serif';
   .input {
     width: 70%;
     margin: 0 auto;
-    padding-top: 15px;
-    padding-bottom: 30px;
+    padding-top: 5px;
+    padding-bottom: 15px;
   }
   .login-btn {
     border: 1px solid #e2e2e2;
-    border-radius: 5px;
     background-color: #eeeeee;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .msg {
     text-align: center;
   }
 }
-
 .header-logo {
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 //view/signup
-.signup-view {
-  @include form;
-}
-
+.signup-view, 
 //view/login
-.login-view {
-  @include form;
-}
-
+.login-view, 
 // view/users/edit
 .edit-view {
   @include form;
@@ -88,17 +83,17 @@
 
 .user-avatar {
   text-align: center;
-    img {
+  img {
     border-radius: 100%;
-    }
+  }
 }
 
 .user-avatar-show {
   width: 130px;
-    img {
+  img {
     border-radius: 100%;
     margin: 0;
-    }
+  }
 }
 
 .user-name-company {

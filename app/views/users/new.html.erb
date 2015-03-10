@@ -1,4 +1,6 @@
-<%= image_tag("logos/pitchr-logo.png", height: 150, :class => "header-logo") %>
+<br>  
+<%= image_tag("logos/pitchr-logo.png", height: 80, :class => "header-logo") %>
+
 <div class='signup-view'>
   <div class='headers'>
     <%= image_tag 'welcome/signup.png', height: 40 %>
@@ -9,13 +11,15 @@
     <%= bootstrap_form_for @user do |f| %>
       <%= f.text_field :first_name, label: "First Name:" %>
       <%= f.text_field :last_name, label: "Last Name:" %>
-      <%= f.email_field :email %>
-      <%= f.password_field :password %>
+      <%= f.email_field :email, label: "Email:" %>
+      <%= f.password_field :password, label: "Password:" %>
       <%= f.password_field :password_confirmation, label: "Password Confirmation:" %>
     
       <%= f.submit "Sign me up!", :class => "login-btn" %>
     <% end %> 
   </div>
+
+  <p class="msg"><%= link_to "Already a member? Log in here.", login_path %></p>
 </div>
 
 <br>
