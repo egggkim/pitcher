@@ -87,22 +87,29 @@ footer {
     }
 }
 
-// view/about and view/contact
+// about and contact views
 .about, .contact {
   margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 10px;
   text-align: center;
   background-color: white;
-  width: 60%;
-  border-radius:15px;
-    #headers{
-      margin-top: 30px;
-    }
-    #email {
-      margin-bottom: 30px;
-    }
-    p {
-      padding: 0px 30px 15px 30px;
-    }
+  width: 650px;
+  hr {
+    width: 550px;
+  }
+  #headers{
+    margin-top: 30px;
+  }
+  #email {
+    margin-bottom: 30px;
+  }
+  p {
+    width: 550px;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 30px;
+  }
 }
 
 // all page headers (ie. log in, sign up, your profile)
