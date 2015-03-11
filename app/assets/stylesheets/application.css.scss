@@ -57,7 +57,7 @@ nav {
     float: right;
     width: 150px;
     text-align: center;
-    line-height: 21px;
+    line-height: 23px;
   }
   ul li a {
     display: block;
@@ -75,7 +75,7 @@ nav {
     display: none;
   }
   ul li:hover ul {
-    display: block; // displays the dropdown 
+    display: block; // displays the dropdown
   }
   a {
     font-family: $font;
@@ -92,10 +92,9 @@ nav {
   margin-bottom: 80px; // spacing above footer
 }
 
-// applies to users index and pitches index
+// applies to pitches index
 li {
   list-style: none;
-  margin-bottom: 15px;
 }
 
 // all links unless otherwise specified (nav links separately defined above)

@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// pitch and user name filter styling
+// pitch filter styling
 @mixin filter {
   font-family: 'open sans', sans serif;
   text-align: center;
@@ -42,15 +42,10 @@
 }
 
 // pitch title filter 
-#filter-title,
-#filter-name {
+#filter-title {
   @include filter;
   #submit-title { // submit button 
     width: 100px;
-    background-color: #ffcc66;
-  }
-  #submit-name { // submit button
-    width: 130px;
     background-color: #ffcc66;
   }
 }
