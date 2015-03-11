@@ -92,8 +92,16 @@
 
 // view/pitch/edit
 .edit-pitch-view {
+  width: 650px;
+  background-color: white;
   margin: 0 auto;
-  padding: 20px;
+  padding-bottom: 20px;
+  .headers {
+    padding-top: 30px;
+  }
+  hr {
+    width: 500px;
+  }
 }
 
 #edit-my-profile {

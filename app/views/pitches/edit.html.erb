@@ -1,17 +1,18 @@
 <% if pitch_owner %>
-
   <div class='edit-pitch-view'>
     <div class='headers'>
-      <%= image_tag('models/editpitch.png', height: 60) %>
+      <%= image_tag('models/editpitch.png', height: 40) %>
     </div>
     <hr>
-    <%= bootstrap_form_for @pitch, :html => {:multipart => true} do |f| %>
-        <%= f.text_field :title, label: "Title:" %>
-        <%= f.text_area :description, label: "Description: " %>
-        <%= f.file_field :image, label: "Update your thumbnail:" %>
+    <div class="form-group">
+      <%= bootstrap_form_for @pitch, :html => {:multipart => true} do |f| %>
+          <%= f.text_field :title, label: "Title:" %>
+          <%= f.text_area :description, label: "Description: " %>
+          <%= f.file_field :image, label: "Update your thumbnail:" %>
 
-        <%= f.submit %>
-    <% end %>
+          <%= f.submit "Update Pitch", :id => "submit" %>
+      <% end %>
+    </div>
   </div>
 
 <% else %>
