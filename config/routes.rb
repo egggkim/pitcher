@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
 
-  root 'welcome#index'
+  root 'pitches#index'
   get '/', to: redirect('/pitches')
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
