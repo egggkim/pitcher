@@ -58,8 +58,15 @@
 
 .pitch-title {
   text-align: center;
-  overflow: hidden;
+  width: 250px;
+  overflow: scroll;
 }
+
+// pitch index bottom panel with pitch title
+// .panel-footer {
+//   width: 400px;;
+//   overflow: hidden !important;
+// }
 
 .pitch-title-upcase {
   text-transform: uppercase;
