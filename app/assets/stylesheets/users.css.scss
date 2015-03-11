@@ -46,6 +46,7 @@
   @include form;
 }
 
+// delete account link
 .delete {
   margin-top: 10px;
   text-align: center;
@@ -55,19 +56,27 @@
 #about-user {
   margin: 0 auto;
   text-align: center;
-  width: 60%;
+  width: 650px;
   position: relative;
+  hr {
+    width: 650px;
+  }
 }
 
-.users-view {
-  width: 130px;
-}
-
+// user show view avatar 
 .user-avatar {
   text-align: center;
-  img {
-    border-radius: 100%;
-  }
+}
+
+// user show pitches header
+#my-pitches {
+  text-align: center;
+  margin: 20px;
+}
+
+// all users index
+.users-view {
+  width: 130px;
 }
 
 .user-avatar-show {
