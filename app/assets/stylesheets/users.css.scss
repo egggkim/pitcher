@@ -14,11 +14,16 @@
   hr {
     width: 300px;
   }
-  .input {
-    width: 70%;
+  .headers {
+    margin-top: 20px;
+  }
+  .input {    width: 300px;
     margin: 0 auto;
     padding-top: 5px;
     padding-bottom: 15px;
+  }
+  input {
+    width: 300px;
   }
   .submit-btn {
     border: 1px solid #e2e2e2;
@@ -32,21 +37,6 @@
   }
 }
 
-@mixin titles {
-  font-family: bebas;
-  letter-spacing: 2px;
-}
-
-.pink-title {
-  @include titles;
-  color: #f9cbcd;
-}
-
-.blue-title {
-  @include titles;
-  color: #81cdee;
-}
-
 //view/signup
 .signup-view, 
 //view/login
@@ -54,6 +44,11 @@
 // view/users/edit
 .edit-view {
   @include form;
+}
+
+.delete {
+  margin-top: 10px;
+  text-align: center;
 }
 
 // view/users/show

@@ -5,20 +5,25 @@
       <%= image_tag 'models/editprofileheader.png', height: 40 %>
     </div>
     <hr>
+    <div class="input">
       <%= bootstrap_form_for current_user, :html => {:multipart => true} do |f| %>
         <%= f.text_field :first_name, label: "First Name:" %>
         <%= f.text_field :middle_name, label: "Middle Name:" %>
         <%= f.text_field :last_name, label: "Last Name:" %>
         <%= f.email_field :email %>
         <%= f.text_field :company, label: "Company:" %>
-        <%= f.text_area :about, label: "About Me:" %>
+        <%= f.text_field :about, :class => "test", label: "About Me:" %>
         <%= f.file_field :avatar, label: "Profile Photo: " %>
   
         <%= f.submit "Update me" %>
       <% end %>
+
+    </div>
   <% else %>
     <%= render 'shared/error' %>
   <% end %>
 </div>
 
-<%= link_to "Delete my account", user_path(current_user), method: :delete, data: {confirm: "Are you sure you want to delete #{current_user.first_name}? You cannot undo this action."} %>
+<div class="delete">
+  <%= link_to "Delete my account", user_path(current_user), method: :delete, data: {confirm: "Are you sure you want to delete #{current_user.first_name}? You cannot undo this action."} %>
+</div>
