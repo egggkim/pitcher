@@ -111,7 +111,7 @@ footer {
   height: 20px;
   margin-top: 12px;
   text-align: center;
-  a {
+  a { // social media links as images
     margin-right: 20px;
   }
 }
@@ -125,29 +125,4 @@ footer {
 // masonry fix
 .centered {
   margin: 0 auto;
-}
-
-// pitch edit permission denied
-.error {
-  margin-top: 20px;
-  width: 650px;
-  background-color: white;
-  margin: 0 auto;
-  text-align: center;
-  padding-bottom: 20px;
-  img {
-    margin-top: 15px;
-  }
-  hr {
-    width: 580px;
-  }
-  h3 {
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-}
-
-// bottom link on pitch edit error view
-.error-back {
-  text-align: center;
 }

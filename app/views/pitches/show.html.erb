@@ -1,42 +1,41 @@
 <div class='pitch-show'>
   <% if logged_in? %>
-    <!-- currently pitch-info class has no styling -->
     <div class='pitch-info centered'>
       <h3 class='pitch-title-upcase'><%= @pitch.title %></h3>
       <h6>Posted on <%= @pitch.date_published %> by <%= link_to @pitch.user.first_name, user_path(@pitch.user) %></h6>
+      <hr>
       <%= image_tag @pitch.image.url(:large), :class => "img-responsive centered pitch-img" if @pitch.image.url(:large).present?%>
       <br>
       <p class='pitch-descrip'><%= @pitch.description %></p>
+      
+      <!-- only allows pitch owner to edit or delete the pitch -->
+      <br> 
+      <% if pitch_owner %>
+        <div id='pitch-edit'>
+          <%= link_to "Edit", edit_pitch_path(@pitch) %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= link_to "Delete", pitch_path(@pitch), method: :delete, data: {confirm: "Are you sure you want to delete #{@pitch.title}?"} %>
+        </div> <!-- end pitch edit div -->
+      <% end %> <!-- end if pitch owner condition -->
+    </div> <!-- end pitch info div-->
 
-    <!-- only allows pitch owner to edit or delete the pitch -->
-    <br> 
-    <% if pitch_owner %>
-      <span id='pitch-edit'>
-        <%= link_to image_tag('models/editpitch.png', height: 20), edit_pitch_path(@pitch) %>
-      </span>
-        <%= link_to image_tag('models/delete.png', height: 20), pitch_path(@pitch), method: :delete, data: {confirm: "Are you sure you want to delete #{@pitch.title}?"} %>
+  <!-- comments view -->
+  <div class='form-group comment'>
+    <hr>
+    <h4 class='comment-header'>Comments</h4>
+      <div class="comment-body">
+        <ul>
+          <% @pitch.comments.each do |comment| %>   <li><%= comment.body %> <br> <strong>commented by:</strong> <%= comment.commenter %> on: <%= comment.date_added %></li>
+          <% end %>
+        </ul>
+
+        <%= bootstrap_form_for [@pitch, @comment] do |f| %>
+          <%= f.text_area :body, label: "Add a new comment:" %>
+          <%= f.submit "Submit"%>
+        <% end %> 
+      </div>
+
+    <% else %>
+      <%= render 'shared/links' %>
     <% end %>
-    </div>
-
-    <br>
-    <!-- comments view -->
-    <div class='form-group comment-view'>
-    <!-- display comments inside of form -->
-        <h3 class='comments-upcase'>Comments</h3><hr>
-          <div>
-            <ul>
-              <% @pitch.comments.each do |comment| %>   <li><%= comment.body %> <br> <strong>commented by:</strong> <%= comment.commenter %> on: <%= comment.date_added %></li>
-              <% end %>
-            </ul>
-          </div>
-      <%= bootstrap_form_for [@pitch, @comment] do |f| %>
-        <%= f.text_area :body, label: "Add a new comment:" %>
-        
-        <%= f.submit "Submit"%>
-      <% end %> 
-    </div>
-    
-  <% else %>
-    <%= render 'shared/links' %>
-  <% end %>
-</div>
+  </div>
+</div> <!-- end pitch show div--> 

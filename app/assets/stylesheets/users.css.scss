@@ -69,18 +69,6 @@
   padding: 20px;
 }
 
-// view/pitch/show#comments
-.comment-view {
-  @include form;
-  margin: 0 auto;
-  padding: 20px;
-  ul { 
-    padding: 0;
-    overflow: scroll;
-    margin-left: 0;
-  }
-}
-
 #edit-my-profile {
   width: 100%;
   text-align: center;
