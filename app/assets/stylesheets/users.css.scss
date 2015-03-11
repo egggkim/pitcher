@@ -56,24 +56,6 @@
   @include form;
 }
 
-// view/pitch/new
-.new-view {
-  @include form;
-  padding-bottom: 20px;
-}
-
-// view/pitch/edit
-.edit-pitch-view {
-  @include form;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-#edit-my-profile {
-  width: 100%;
-  text-align: center;
-}
-
 // view/users/show
 #about-user {
   margin: 0 auto;

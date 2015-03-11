@@ -1,9 +1,10 @@
 <div class='pitch-show'>
   <% if logged_in? %>
-    <div class='pitch-info centered'>
+   <div class='pitch-info centered'>
       <h3 class='pitch-title-upcase'><%= @pitch.title %></h3>
       <h6>Posted on <%= @pitch.date_published %> by <%= link_to @pitch.user.first_name, user_path(@pitch.user) %></h6>
       <hr>
+
       <%= image_tag @pitch.image.url(:large), :class => "img-responsive centered pitch-img" if @pitch.image.url(:large).present?%>
       <br>
       <p class='pitch-descrip'><%= @pitch.description %></p>
@@ -19,7 +20,7 @@
     </div> <!-- end pitch info div-->
 
   <!-- comments view -->
-  <div class='form-group comment'>
+  <div class='comment'>
     <hr>
     <h4 class='comment-header'>Comments</h4>
       <div class="comment-body">

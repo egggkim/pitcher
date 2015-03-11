@@ -22,7 +22,7 @@
 .pitch-info {
   background-color: white;
   text-align: center;
-  max-width: 650px;
+ width: 650px;
   padding: 1px 15px 0px 15px;
   .pitch-img {
   }
@@ -69,6 +69,36 @@
   text-transform: uppercase;
   width: 500px;
   overflow: scroll;
+}
+
+// new pitch upload view
+.new-view {
+  width: 650px;
+  background-color: white;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  .headers {
+    padding-top: 30px;
+  }
+  hr {
+    width: 500px;
+  }
+}
+
+.form-group {
+  width: 500px;
+  margin: 0 auto;
+}
+
+// view/pitch/edit
+.edit-pitch-view {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#edit-my-profile {
+  width: 100%;
+  text-align: center;
 }
 
 // pitch edit permission denied

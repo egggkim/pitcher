@@ -2,10 +2,20 @@
   <% if logged_in? %>
 
     <div class='headers'>
-      <%= image_tag('nav/newpitch.png', height: 60) %>
+      <%= image_tag('nav/newpitch.png', height: 40) %>
     </div>
     <hr>
-    <%= render "pitches/form", object: @pitch %>
+
+    <div class='form-group'>
+      <!-- form for uploading new pitch -->
+      <%= bootstrap_form_for @pitch, :html => {:multipart => true} do |f| %>
+        <%= f.text_field :title, label: "Title:" %>
+        <%= f.text_area :description, label: "Description:" %>
+        <%= f.file_field :image, label: "Upload a pitch image:" %>
+
+        <%= f.submit "Submit This Pitch" %>
+      <% end %>
+    </div>
     
   <% end %>
 </div>
