@@ -1,12 +1,13 @@
 <div class='error'>
   <div class='headers'>
-    <%= image_tag('nav/error.png', height: 60) %>
+    <%= image_tag('nav/error.png', height: 40) %>
     <hr>
   </div>
 
-  <div class='error-text'>
-    <h3 class='error-upcase'>You do not have permission to edit this pitch!</h3>
-    <h5>This pitch belongs to someone else. Please contact the pitch owner if you have any questions.</h5>
-    <h5>Take me back to <%= link_to "all the pitches.", pitches_path %></h5>
+  <div>
+    <h3>You do not have permission to edit this pitch.</h3>
+    <h5>This pitch belongs to someone else. Please contact the owner if you have any questions.</h5>
   </div>
 </div>
+
+<h5 class="error-back"><%= link_to "Take me back to the pitches.", pitches_path %></h5>

@@ -33,19 +33,9 @@ body {
   background-color: #f7f7f7;
 }
 
-.container-fluid {
-  width: 100%;
-  padding-left: 0;
-    // this padding fixes nav-bar
-}
-
-// each view is rendered inside of the 'main' div
-.main {
-  min-height: 100%;
-  margin-top: 45px;
-  margin: 0 auto;
-  text-align: center;
-}
+// .container-fluid {
+//   width: 100%;
+// }
 
 h1, h2, h3, h4, h5, h6, p, li {
   font-family: $font;
@@ -56,6 +46,7 @@ nav {
   position: fixed;
   height: 45px;
   width: 100%;
+  background: #f7f7f7;
   text-align: right;
   z-index: 1;
   ul {
@@ -71,12 +62,12 @@ nav {
   ul li a {
     display: block;
     padding: 5px 10px;
-    color: #333;
-    background: #f2f2f2;
+    color: #757575;
+    background: #f7f7f7;
     text-decoration: none;
   }
   ul li a:hover {
-    color: black;
+    color: #000;
     background: #939393;
     text-decoration: none;
   }
@@ -84,7 +75,7 @@ nav {
     display: none;
   }
   ul li:hover ul {
-    display: block; /* display the dropdown */
+    display: block; // displays the dropdown 
   }
   a {
     font-family: $font;
@@ -95,16 +86,19 @@ nav {
   }
 }
 
-// applies to users and pitches index and nav li
+// all rails views rendered within div 'main' in application.html
+.main {
+  margin-top: 80px; // spacing below nav
+  margin-bottom: 80px; // spacing above footer
+}
+
+// applies to users index and pitches index
 li {
   list-style: none;
   margin-bottom: 15px;
 }
 
-.navbar-header {
-  padding: 0;
-}
-
+// all links unless otherwise specified (nav links separately defined above)
 a {
   font-family: $font;
   text-transform: uppercase;
@@ -117,65 +111,44 @@ footer {
   height: 20px;
   margin-top: 12px;
   text-align: center;
-    a {
-      margin-right: 20px;
-    }
-}
-
-// about and contact views
-.about, .contact {
-  margin: 0 auto;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  text-align: center;
-  background-color: white;
-  width: 650px;
-  hr {
-    width: 550px;
-  }
-  #headers{
-    margin-top: 30px;
-  }
-  #email {
-    margin-bottom: 30px;
-  }
-  p {
-    width: 550px;
-    text-align: center;
-    margin: 0 auto;
-    padding-bottom: 30px;
+  a {
+    margin-right: 20px;
   }
 }
 
 // all page headers (ie. log in, sign up, your profile)
 .headers {
-  margin: 20px 0px 30px 0px;
+  margin: 80px 0px 30px 0px;
   text-align: center;
 }
 
+// masonry fix
 .centered {
   margin: 0 auto;
 }
 
-.pitches {
-  margin: 0 auto;
-  width: 100%;
-}
-
+// pitch edit permission denied
 .error {
   margin-top: 20px;
-  width: 60%;
+  width: 650px;
   background-color: white;
-  border-radius: 15px;
+  margin: 0 auto;
   text-align: center;
   padding-bottom: 20px;
-    .error-test {
-      width: 40%;
-    }
-    .error-upcase {
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
+  img {
+    margin-top: 15px;
+  }
+  hr {
+    width: 580px;
+  }
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+}
+
+.error-back {
+  text-align: center;
 }
 
 .panel-footer {

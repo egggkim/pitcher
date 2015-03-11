@@ -23,15 +23,31 @@ $font: 'Amatic SC', cursive;
     img { margin-bottom: 10px; }
 }
 
-#logged-in-msg {
-  text-transform: uppercase;
-  font-size: 0.8em;
-  margin-top: 35px;
-  margin-left: 10px;
-  left: 0;
-  color: #999999;
-}
-
 .welcome-upcase {
   text-transform: uppercase;
+}
+
+// about page
+.about {
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: white;
+  width: 650px;
+  hr {
+    width: 550px;
+  }
+  #headers{
+    margin-top: 30px;
+  }
+  #email {
+    margin-bottom: 30px;
+  }
+  p {
+    width: 550px;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 30px;
+  }
 }

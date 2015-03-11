@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   root 'welcome#index'
+  get '/', to: redirect('/pitches')
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
