@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// pitch and company filter styling
+// pitch and user name filter styling
 @mixin filter {
   font-family: 'open sans', sans serif;
   text-align: center;
@@ -22,7 +22,7 @@
 .pitch-info {
   background-color: white;
   text-align: center;
- width: 650px;
+  width: 650px;
   padding: 1px 15px 0px 15px;
   .pitch-img {
   }
@@ -43,13 +43,13 @@
 
 // pitch title filter 
 #filter-title,
-#filter-company {
+#filter-name {
   @include filter;
   #submit-title { // submit button 
     width: 100px;
     background-color: #ffcc66;
   }
-  #submit-company { // submit button
+  #submit-name { // submit button
     width: 130px;
     background-color: #ffcc66;
   }
@@ -102,11 +102,6 @@
   hr {
     width: 500px;
   }
-}
-
-#edit-my-profile {
-  width: 100%;
-  text-align: center;
 }
 
 // pitch edit permission denied

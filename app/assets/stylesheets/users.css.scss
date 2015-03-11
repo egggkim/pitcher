@@ -52,7 +52,7 @@
   text-align: center;
 }
 
-// view/users/show
+// user show view
 #about-user {
   margin: 0 auto;
   text-align: center;
@@ -68,6 +68,12 @@
   text-align: center;
 }
 
+// user show view name
+.user-name-upcase {
+  text-transform: uppercase;
+  color: #666666;
+}
+
 // user show pitches header
 #my-pitches {
   text-align: center;
@@ -79,15 +85,22 @@
   width: 130px;
 }
 
+// all users index
 .user-avatar-show {
   width: 130px;
   img {
-    border-radius: 100%;
     margin: 0;
   }
 }
 
-.user-name-company {
+// all users index
+.user-name {
   width: 130px;
   text-align: center;
 }
+
+#edit-my-profile {
+  width: 100%;
+  text-align: center;
+}
+

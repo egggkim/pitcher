@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
   def index
-    if params[:query]
-      # [:query] defined in view as filter input field
-      @users = User.where(company:/#{params[:query]}/i)
-    else
-      @users = User.all.order("created_at DESC")
-    end
+    @users = User.all.order("created_at DESC")
   end
 
   def new

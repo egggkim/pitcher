@@ -1,28 +1,12 @@
-<div class='users-all'>
-  <% if logged_in? %>
+<div class='error'>
+  <div class='headers'>
+    <%= image_tag('nav/error.png', height: 40) %>
+    <hr>
+  </div>
 
-    <div class='headers'>
-      <%= image_tag('nav/allusers.png', height: 60) %>
-    </div>
-
-    <div id='filter-company'>
-      <%= form_tag("/users", method: "get") do %>
-        <%= text_field_tag(:query) %>
-        <%= submit_tag("Filter by Company", :id => 'submit-company') %>
-      <% end %>
-    </div>  
-
-    <ul class='users-view'>
-      <% @users.each do |u| %>
-        <li class='user-avatar-show'>
-          <%= link_to (image_tag u.avatar.url(:thumb)), u %>
-        </li>
-        <li class='user-name-company'><%= link_to u.first_name, user_path(u) %><br><%= link_to u.company, user_path(u) %>
-        </li>
-      <% end %>
-    </ul>
-
-  <% else %>
-    <%= render 'shared/links' %>
-  <% end %>
+  <div>
+    <h5>You do not have permission to view this page.</h5>
+  </div>
 </div>
+
+<h5 class="error-back"><%= link_to "Take me back to the pitches.", pitches_path %></h5>
